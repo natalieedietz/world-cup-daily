@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<title>World Cup Daily · Thu 25 June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    color-scheme:dark;
+    --ink:#0D1B2A;
+    --panel:#142537;
+    --flap:#1E374F;
+    --flap-edge:#0A1622;
+    --amber:#FFC857;
+    --pitch:#4ADE80;
+    --coral:#FF6B6B;
+    --paper:#F3EFE6;
+    --mute:#8CA0B5;
+    --arsenal:#EF3340;
+    --scot:#5BC0EB;
+    --rule:rgba(255,255,255,0.08);
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  html, body{
+    margin:0;
+    background:var(--ink) !important;
+  }
+
+  .page{
+    background:var(--ink) !important;
+    color:var(--paper) !important;
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+
+  .wrap{ max-width:760px; margin:0 auto; padding:0 1.25rem; }
+
+  a{ color:var(--amber); text-decoration:none; border-bottom:1px solid currentColor; }
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+    outline:2px solid var(--amber);
+    outline-offset:2px;
+  }
+
+  /* ---------- Ticker ---------- */
+  .ticker{
+    background:var(--flap-edge);
+    border-bottom:1px solid var(--rule);
+    overflow:hidden;
+    white-space:nowrap;
+    padding:0.5rem 0;
+  }
+  .ticker-track{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    color:var(--mute);
+    animation:ticker 42s linear infinite;
+    padding-left:100%;
+  }
+  .ticker-track span{ color:var(--amber); }
+  @keyframes ticker{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-100%); }
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead{ padding:2.5rem 0 1.5rem; }
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin:0 0 0.75rem;
+  }
+  .masthead h1{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    font-weight:700;
+    letter-spacing:0.03em;
+    font-size:clamp(2.4rem, 9vw, 4.2rem);
+    line-height:1.02;
+    margin:0;
+  }
+  .dateline{
+    font-family:'Space Mono', monospace;
+    font-size:0.78rem;
+    color:var(--mute);
+    letter-spacing:0.05em;
+    margin:0.6rem 0 1rem;
+  }
+  .standfirst{
+    font-size:1.1rem;
+    font-style:italic;
+    color:var(--paper);
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:1rem 0;
+    margin:0;
+  }
+
+  /* ---------- Section titles ---------- */
+  .section-title{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    font-size:1rem;
+    color:var(--amber);
+    margin:0 0 1rem;
+    padding-top:2.5rem;
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+  }
+  .section-title::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--rule);
+  }
+  .section-note{
+    font-family:'Space Mono', monospace;
+    font-size:0.78rem;
+    color:var(--mute);
+    margin:-0.5rem 0 1.25rem;
+  }
+
+  /* ---------- Departures board ---------- */
+  .board{ padding-bottom:0.5rem; }
+  .board-row{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    padding:0.85rem 0;
+    border-bottom:1px solid var(--rule);
+    transform-origin:top center;
+    animation:flapIn 0.6s ease both;
+  }
+  .board-row:nth-child(1){ animation-delay:0.05s; }
+  .board-row:nth-child(2){ animation-delay:0.2s; }
+  .board-row:nth-child(3){ animation-delay:0.35s; }
+  .board-row:nth-child(4){ animation-delay:0.5s; }
+  @keyframes flapIn{
+    from{ opacity:0; transform:rotateX(-90deg); }
+    to{ opacity:1; transform:rotateX(0deg); }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .board-row{ animation:none; }
+    .ticker-track{ animation:none; }
+  }
+  .flap-time{
+    font-family:'Space Mono', monospace;
+    font-weight:700;
+    font-size:0.85rem;
+    color:var(--amber);
+    background:var(--flap);
+    border-radius:4px;
+    padding:0.5rem 0.6rem;
+    min-width:84px;
+    text-align:center;
+    box-shadow:inset 0 -3px 0 rgba(0,0,0,0.35);
+    flex-shrink:0;
+  }
+  .board-main{ flex:1; min-width:0; }
+  .board-match{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:1.1rem;
+    letter-spacing:0.02em;
+  }
+  .board-match .vs{
+    color:var(--mute);
+    font-weight:400;
+    font-size:0.85em;
+    margin:0 0.35em;
+  }
+  .board-meta{
+    font-family:'Space Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--mute);
+    margin-top:0.2rem;
+  }
+
+  /* ---------- For You cards ---------- */
+  .grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1rem;
+  }
+  @media (max-width:640px){
+    .grid-2{ grid-template-columns:1fr; }
+  }
+  .card{
+    background:var(--panel);
+    border-radius:10px;
+    padding:1.25rem;
+    border-left:4px solid var(--accent, var(--amber));
+  }
+  .card-icon{ font-size:1.4rem; line-height:1; margin-bottom:0.5rem; }
+  .card h3{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    font-size:0.95rem;
+    margin:0 0 0.5rem;
+  }
+  .card p{ margin:0; font-size:0.95rem; }
+  .card-gold{ --accent:var(--amber); }
+  .card-red{ --accent:var(--arsenal); }
+  .card-green{ --accent:var(--pitch); }
+  .card-blue{ --accent:var(--scot); }
+
+  /* ---------- Match sections ---------- */
+  .match{ padding-top:2.75rem; border-top:1px solid var(--rule); }
+  .match-eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--mute);
+    margin-bottom:0.75rem;
+  }
+  .match-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+    margin-bottom:1rem;
+  }
+  .tag{
+    font-family:'Space Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:0.3rem 0.6rem;
+    border-radius:999px;
+    border:1px solid var(--rule);
+    color:var(--paper);
+  }
+  .tag-kicker{ background:var(--flap); color:var(--amber); border-color:var(--flap); font-weight:700; }
+  .tag-arsenal{ border-color:var(--arsenal); color:var(--arsenal); }
+  .tag-pl{ border-color:var(--pitch); color:var(--pitch); }
+
+  .match-title{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    font-weight:700;
+    letter-spacing:0.02em;
+    font-size:clamp(1.6rem, 6vw, 2.4rem);
+    margin:0 0 0.6rem;
+    line-height:1.1;
+  }
+  .match-title .vs{ color:var(--mute); font-weight:400; font-size:0.7em; margin:0 0.25em; }
+  .match-dek{
+    font-style:italic;
+    color:var(--mute);
+    font-size:1.05rem;
+    margin:0 0 1.25rem;
+  }
+
+  .prob-bar{
+    display:flex;
+    height:10px;
+    border-radius:999px;
+    overflow:hidden;
+    background:var(--flap);
+    margin:0 0 0.6rem;
+  }
+  .seg-a{ background:var(--pitch); }
+  .seg-d{ background:var(--mute); }
+  .seg-b{ background:var(--coral); }
+  .prob-labels{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1.25rem;
+    font-family:'Space Mono', monospace;
+    font-size:0.78rem;
+    color:var(--mute);
+    margin-bottom:1.5rem;
+  }
+  .dot{
+    width:8px; height:8px; border-radius:50%;
+    display:inline-block; margin-right:0.4em;
+  }
+  .dot-a{ background:var(--pitch); }
+  .dot-d{ background:var(--mute); }
+  .dot-b{ background:var(--coral); }
+  .prob-source{
+    display:block;
+    font-size:0.65rem;
+    color:var(--mute);
+    opacity:0.7;
+    margin-top:-1rem;
+    margin-bottom:1.5rem;
+  }
+
+  .story p{ margin:0 0 1rem; }
+  .story p:last-child{ margin-bottom:0; }
+
+  .callout{
+    background:var(--panel);
+    border-left:4px solid var(--coral);
+    border-radius:8px;
+    padding:1rem 1.25rem;
+    margin:1.5rem 0;
+  }
+  .callout-label{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-size:0.8rem;
+    color:var(--coral);
+    margin-bottom:0.35rem;
+  }
+  .callout p{ margin:0; font-size:0.95rem; }
+
+  .sub-title{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    font-size:0.85rem;
+    color:var(--amber);
+    margin:2rem 0 1rem;
+  }
+
+  .players{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0.85rem;
+    margin-bottom:1.5rem;
+  }
+  @media (max-width:640px){
+    .players{ grid-template-columns:1fr; }
+  }
+  .player{
+    background:var(--panel);
+    border-radius:8px;
+    padding:1rem;
+  }
+  .player-num{
+    font-family:'Space Mono', monospace;
+    font-size:0.75rem;
+    color:var(--amber);
+    letter-spacing:0.1em;
+  }
+  .player h4{
+    font-family:'Oswald', sans-serif;
+    font-size:1rem;
+    margin:0.35rem 0 0.1rem;
+    letter-spacing:0.01em;
+  }
+  .player-club{
+    font-family:'Space Mono', monospace;
+    font-size:0.65rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--mute);
+    margin-bottom:0.5rem;
+  }
+  .player p{ margin:0; font-size:0.88rem; color:var(--paper); }
+
+  .intel{
+    display:flex;
+    flex-direction:column;
+    gap:0.75rem;
+    margin-bottom:0.5rem;
+  }
+  .intel-item{
+    display:flex;
+    gap:0.75rem;
+    align-items:flex-start;
+    border:1px dashed var(--rule);
+    border-radius:8px;
+    padding:0.85rem 1rem;
+  }
+  .intel-icon{
+    font-family:'Space Mono', monospace;
+    font-size:0.7rem;
+    font-weight:700;
+    color:var(--ink);
+    background:var(--amber);
+    border-radius:50%;
+    width:1.4em; height:1.4em;
+    flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    margin-top:0.15rem;
+  }
+  .intel-item p{ margin:0; font-size:0.88rem; color:var(--mute); }
+
+  /* ---------- Score cards ---------- */
+  .score-card{
+    background:var(--panel);
+    border-radius:10px;
+    padding:1.1rem 1.25rem;
+  }
+  .score-card.pending{
+    background:transparent;
+    border:1px dashed var(--rule);
+    grid-column:1 / -1;
+  }
+  .score-meta{
+    font-family:'Space Mono', monospace;
+    font-size:0.65rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--mute);
+    margin-bottom:0.6rem;
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    flex-wrap:wrap;
+  }
+  .badge-upset{
+    background:var(--coral);
+    color:var(--ink);
+    font-weight:700;
+    border-radius:4px;
+    padding:0.1rem 0.4rem;
+    letter-spacing:0.1em;
+  }
+  .badge-live{
+    background:var(--amber);
+    color:var(--ink);
+    font-weight:700;
+    border-radius:4px;
+    padding:0.1rem 0.4rem;
+    letter-spacing:0.1em;
+  }
+  .score-line{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:1.05rem;
+    margin-bottom:0.6rem;
+    gap:0.5rem;
+  }
+  .score-line .score{
+    font-family:'Space Mono', monospace;
+    background:var(--flap);
+    color:var(--amber);
+    border-radius:4px;
+    padding:0.2rem 0.55rem;
+    flex-shrink:0;
+  }
+  .score-card p{ margin:0; font-size:0.88rem; color:var(--mute); }
+
+  /* ---------- Standings ---------- */
+  .table-wrap{ overflow-x:auto; margin-bottom:1.75rem; }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-family:'Space Mono', monospace;
+    font-size:0.82rem;
+    min-width:320px;
+  }
+  caption{
+    text-align:left;
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    font-size:0.85rem;
+    color:var(--paper);
+    margin-bottom:0.6rem;
+    font-weight:600;
+  }
+  th, td{
+    text-align:left;
+    padding:0.55rem 0.6rem;
+    border-bottom:1px solid var(--rule);
+  }
+  th{
+    color:var(--mute);
+    font-weight:400;
+    text-transform:uppercase;
+    font-size:0.68rem;
+    letter-spacing:0.1em;
+  }
+  td.num, th.num{ text-align:center; }
+  tr.qualify td:first-child{ color:var(--pitch); }
+  tr.qualify td:first-child::before{
+    content:"● ";
+    color:var(--pitch);
+  }
+  tr.pending td{ color:var(--mute); }
+  .table-note{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    color:var(--mute);
+    margin:-0.75rem 0 1.75rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--rule);
+    margin-top:3rem;
+    padding:1.75rem 0 3rem;
+    font-family:'Space Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.04em;
+    color:var(--mute);
+    line-height:1.8;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>USA 49%</span> v TÜRKIYE 27% &nbsp;·&nbsp; <span>GERMANY 56%</span> v ECUADOR 22% &nbsp;·&nbsp; <span>NETHERLANDS 87%</span> v TUNISIA 4% &nbsp;·&nbsp; <span>JAPAN 51%</span> v SWEDEN 22% &nbsp;·&nbsp; SOUTH AFRICA STUN SOUTH KOREA 1-0 AND REACH THE KNOCKOUTS FOR THE FIRST TIME EVER &nbsp;·&nbsp; BRAZIL END SCOTLAND'S DREAM 3-0 &nbsp;·&nbsp; SWITZERLAND PIP CANADA TO WIN GROUP B &nbsp;·&nbsp; <span>HAITI LOSE 4-2 BUT WALK OUT HEROES</span> &nbsp;·&nbsp; USMNT CLOSE THE GROUP STAGE AT SOFI TONIGHT &nbsp;·&nbsp;
+    </div>
+  </div>
+
+  <div class="wrap">
+    <header class="masthead">
+      <p class="eyebrow">World Cup Daily · Thursday 25 June 2026 · Los Angeles</p>
+      <h1>The USMNT Throw a Party at SoFi With Nothing Riding On It, Germany Try Not to Trip Over Their Own Shoelaces, and Three More Groups Settle Their Affairs in Glorious, Simultaneous Chaos</h1>
+      <p class="dateline">Briefing for Natalie</p>
+      <p class="standfirst">Today the tournament does the thing it does best: six matches, three groups, all kicking off in pairs so nobody can sit on a deckchair watching a calculator. Your USMNT have already won the group and tonight get to play the rare World Cup match with zero jeopardy and maximum vibes, fifteen minutes down the road at SoFi. But first, a tribute to Haiti, who lost and still left as the most beloved team of the day, and to South Africa, who detonated the entire bracket while you were asleep.</p>
+    </header>
+
+    <!-- WHAT YOU MISSED -->
+    <section>
+      <h2 class="section-title">First, What You Missed · Wednesday 24 June</h2>
+      <p class="section-note">Three groups finished, one giant fell, one fairytale ended, and one tiny nation lost a game and won everyone's heart.</p>
+      <div class="grid-2">
+        <article class="score-card">
+          <div class="score-meta"><span class="badge-upset">Bracket Buster</span> Group A · Monterrey</div>
+          <div class="score-line"><span>🇿🇦 South Africa</span><span class="score">1&#8211;0</span><span>🇰🇷 South Korea</span></div>
+          <p>While Los Angeles slept, Bafana Bafana detonated the tournament. Thapelo Maseko's goal sank a South Korea side built around Son Heung-min, and South Africa, who hosted a World Cup in 2010 and still went home early, have reached the knockout rounds for the first time in their entire history. Son, who spends his weekends a few miles from your sofa playing for LAFC, trudged off eliminated. The reward for South Africa's heroics? A date with Canada on Sunday. The reward for the rest of us? Chaos, beautiful chaos.</p>
+        </article>
+        <article class="score-card">
+          <div class="score-meta">Group C · Miami Gardens</div>
+          <div class="score-line"><span>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</span><span class="score">0&#8211;3</span><span>🇧🇷 Brazil</span></div>
+          <p>And so the streak lives on. Asked to beat Brazil to be sure of survival, Scotland did the most Scottish thing imaginable and lost 3-0 to a Vinícius Júnior masterclass, then immediately had to start refreshing other groups' scores to see whether they sneak through as a best third-placed team. Eleven World Cups, still no clean escape from a group under their own steam. McTominay rattled the post in the 95th minute, because of course he did. The agony is the brand.</p>
+        </article>
+        <article class="score-card">
+          <div class="score-meta"><span class="badge-upset">Heroes in Defeat</span> Group C · Atlanta</div>
+          <div class="score-line"><span>🇲🇦 Morocco</span><span class="score">4&#8211;2</span><span>🇭🇹 Haiti</span></div>
+          <p>Haiti, the lowest-ranked team in the entire tournament, were already eliminated and trailing comfortably, and then produced 45 of the most joyous minutes in their footballing history, scoring twice and very nearly conjuring a comeback that would have shaken the planet. Morocco, the 2022 semifinalists, eventually steadied themselves and advanced second. But the cameras stayed on the Haitian players at full time, applauding a crowd that adored them. They lost the match and won the day. Football, occasionally, gets it right.</p>
+        </article>
+        <article class="score-card">
+          <div class="score-meta">Group A · Mexico City</div>
+          <div class="score-line"><span>🇲🇽 Mexico</span><span class="score">3&#8211;0</span><span>🇨🇿 Czechia</span></div>
+          <p>Mexico signed off the group stage with a tidy 3-0 over Czechia at a delirious Azteca, where they have somehow never lost a World Cup match across three different tournaments, capped by a stoppage-time rocket from Fidalgo. In Group B, meanwhile, Switzerland beat Canada 2-1 to nick top spot, scoring twice early in the second half before Promise David's thunderbolt gave the co-hosts a nervy, ultimately academic, consolation. Both Swiss and Canadians are through.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TODAY'S RUNNING ORDER -->
+    <section>
+      <h2 class="section-title">Today's Running Order · Pacific Time</h2>
+      <p class="section-note">Six matches, three groups (D, E, F), all in simultaneous pairs. The day builds to a SoFi nightcap right on your doorstep.</p>
+      <div class="board">
+        <div class="board-row">
+          <div class="flap-time">1:00 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇪🇨 Ecuador <span class="vs">v</span> Germany 🇩🇪</div>
+            <div class="board-meta">Group E · East Rutherford, NJ</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">1:00 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇨🇼 Curaçao <span class="vs">v</span> Ivory Coast 🇨🇮</div>
+            <div class="board-meta">Group E · Philadelphia</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">4:00 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇯🇵 Japan <span class="vs">v</span> Sweden 🇸🇪</div>
+            <div class="board-meta">Group F · Arlington, TX</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">4:00 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇹🇳 Tunisia <span class="vs">v</span> Netherlands 🇳🇱</div>
+            <div class="board-meta">Group F · Kansas City</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">7:00 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇹🇷 Türkiye <span class="vs">v</span> USA 🇺🇸</div>
+            <div class="board-meta">Group D · Inglewood (SoFi)</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">7:00 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇵🇾 Paraguay <span class="vs">v</span> Australia 🇦🇺</div>
+            <div class="board-meta">Group D · Santa Clara</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOR YOU -->
+    <section>
+      <h2 class="section-title">For You</h2>
+      <div class="grid-2">
+        <article class="card card-gold">
+          <div class="card-icon">🏟️</div>
+          <h3>USA at SoFi, On Your Doorstep</h3>
+          <p>The big one for you tonight, fifteen minutes from Brentwood. The USMNT have already won Group D, which means tonight at SoFi is a guilt-free, no-stakes festival of a match: Pochettino can rest the legs that matter, hand minutes to the squad players desperate to impress, and let the home crowd enjoy itself before the serious business begins. Pulisic, rested with a minor knock, is reportedly hoping to feature. It is the most relaxed a US World Cup night has ever been. Soak it up.</p>
+        </article>
+        <article class="card card-red">
+          <div class="card-icon">⭐</div>
+          <h3>Club Connections</h3>
+          <p>A proper Premier League roll call. The USA feature Antonee Robinson (Fulham) and Weston McKennie, with Christian Pulisic (Milan) the headline. Germany roll out Florian Wirtz (Liverpool) and Kai Havertz (Arsenal). Sweden counter with Viktor Gyökeres (Arsenal) and Alexander Isak (Liverpool), Japan bring Kaoru Mitoma (Brighton), and the Netherlands lean on Virgil van Dijk and Cody Gakpo (both Liverpool).</p>
+        </article>
+        <article class="card card-green">
+          <div class="card-icon">🌶️</div>
+          <h3>The Comfort-Watch Pick</h3>
+          <p>For genuine jeopardy, the 4pm Japan v Sweden is the gem: two good sides, a real shootout for the group, and Gyökeres and Isak against a Japanese team everyone secretly fancies. But the can't-look-away pick is the 1pm Ecuador v Germany. Germany are favorites and yet entirely capable of producing one of their patented tournament wobbles, and Ecuador are exactly the stubborn, athletic side to induce one. Multi-screen the lot.</p>
+        </article>
+        <article class="card card-blue">
+          <div class="card-icon">🐋</div>
+          <h3>Adopt-a-Team Watch</h3>
+          <p>Curaçao, your beloved island of 156,000, are still alive on a single famous point, and today they face Ivory Coast needing a miracle to advance. The odds are brutal, but this is the team whose goalkeeper made fifteen saves to hold Ecuador, so write nothing off. Even if the dream ends today, they have already done more than anyone outside Willemstad imagined possible. One more upset and the entire Caribbean throws a party.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MATCH 1: ECUADOR V GERMANY -->
+    <section class="match">
+      <p class="match-eyebrow">Group E · 1:00 PM PT · MetLife Stadium, East Rutherford</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">Wobble Watch</span>
+        <span class="tag tag-pl">⚽ Wirtz · Liverpool</span>
+        <span class="tag tag-pl">⚽ Caicedo · Chelsea</span>
+      </div>
+      <h2 class="match-title">Ecuador <span class="vs">v</span> Germany</h2>
+      <p class="match-dek">Germany have already won the group and can afford to coast, which historically is the exact moment Germany fall down the stairs in front of everyone. Ecuador would be delighted to provide the banana skin.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:22%"></div>
+        <div class="seg-d" style="width:22%"></div>
+        <div class="seg-b" style="width:56%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Ecuador 22%</span>
+        <span><span class="dot dot-d"></span>Draw 22%</span>
+        <span><span class="dot dot-b"></span>Germany 56%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>Germany arrive having already topped Group E, sealed by Deniz Undav's stoppage-time heroics against Ivory Coast, and they have the comfortable air of a side that can experiment, rotate, and protect a few weary limbs ahead of the knockouts. Florian Wirtz and Jamal Musiala remain a joy, Kai Havertz leads the line, and on talent alone they should handle this with the handbrake half-on. The phrase "should handle this," however, has preceded approximately every German tournament humiliation of the last decade, so let us not get carried away.</p>
+        <p>Ecuador are precisely the wrong opponent for a complacent favorite. Built on the granite of Chelsea's Moisés Caicedo and a defense that does not enjoy being scored against, they are still scrapping for a knockout berth and will treat this as the must-win it is for them. They held their nerve through a tricky group, and a disciplined, physical, counterattacking Ecuador is exactly the kind of side that has made Germany look mortal before. There is real jeopardy here, even if the scoreline suggests otherwise.</p>
+        <p>The likeliest outcome is a professional German win against a stubborn opponent. But this is the banana-skin slot of the day, the heavily favoured giant with nothing to play for against the hungry side that needs everything, and if Germany switch off for even twenty minutes, Ecuador have the tools to make Nagelsmann's afternoon deeply uncomfortable. Watch with one eyebrow permanently raised.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Genuinely live. Germany have nothing to play for, Ecuador have everything, and German sides with nothing to play for have a rich and embarrassing recent history. If Caicedo bosses the midfield and Ecuador strike first, do not be even slightly surprised.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Florian Wirtz</h4>
+          <div class="player-club">Liverpool</div>
+          <p>Germany's creative jewel, all glides and disguised passes. Even in a rotated side, the most likely man to unlock a packed Ecuador defense.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Moisés Caicedo</h4>
+          <div class="player-club">Chelsea</div>
+          <p>Ecuador's midfield destroyer and tempo-setter. If Ecuador are to frustrate and then ambush Germany, it starts with him winning the middle.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Kai Havertz</h4>
+          <div class="player-club">Arsenal</div>
+          <p>Germany's focal point up top, sharp in the air and in the link play. A goal here keeps his tournament momentum humming nicely.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Germany suffered group-stage exits at both the 2018 and 2022 World Cups, a humiliation for a four-time champion. Having already qualified this time, the challenge is sustaining intensity when the stakes briefly disappear.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Ecuador have a knack for the dramatic at World Cups and reached the round of 16 in 2006. A point here might be enough depending on the simultaneous Curaçao v Ivory Coast result next door.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 2: CURAÇAO V IVORY COAST -->
+    <section class="match">
+      <p class="match-eyebrow">Group E · 1:00 PM PT · Lincoln Financial Field, Philadelphia</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">Island Dream</span>
+        <span class="tag tag-pl">⚽ Amad · Man Utd</span>
+      </div>
+      <h2 class="match-title">Curaçao <span class="vs">v</span> Ivory Coast</h2>
+      <p class="match-dek">The smallest nation ever to play a World Cup, armed with one famous point and a goalkeeper who has been possessed, against an Ivory Coast side that simply must win to survive.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:5%"></div>
+        <div class="seg-d" style="width:11%"></div>
+        <div class="seg-b" style="width:84%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Curaçao 5%</span>
+        <span><span class="dot dot-d"></span>Draw 11%</span>
+        <span><span class="dot dot-b"></span>Ivory Coast 84%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>Let us be clear-eyed and also romantic, because both are allowed. Ivory Coast are vastly the stronger side, they must win to keep their own knockout hopes alive after that gut-wrenching late loss to Germany, and they carry genuine Premier League menace in Manchester United's Amad Diallo and Brighton's Simon Adingra. By every rational measure, the Elephants win this, probably comfortably, and march on to the round of 32 as they were always expected to.</p>
+        <p>And yet here are Curaçao, population roughly 156,000, the smallest nation ever to grace a World Cup, sitting on a point nobody believed they would take, courtesy of goalkeeper Eloy Room producing a fifteen-save exorcism against Ecuador that the record books had not witnessed since 1966. They have already rewritten what is possible for a microstate at this tournament. To advance they likely need to win, which the odds rate at roughly the same probability as being struck by a particularly motivated meteor, but they have stopped caring what the odds think.</p>
+        <p>Realistically, the fairytale meets its limit today against a hungrier, more talented team that cannot afford to slip. But Curaçao have already turned a footnote into a headline, and if Room catches fire one more time and the islanders nick something, it would stand among the greatest underdog stories the World Cup has ever told. Adopt them for ninety more minutes. They have earned every neutral heart in the building.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>The result would be a colossal shock, but this is the team that already shocked everyone once. Ivory Coast's nerves matter here: a side that must win can tighten up, and if Room reprises his heroics, the pressure on the Elephants could become a story all its own.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Eloy Room</h4>
+          <div class="player-club">Curaçao</div>
+          <p>The goalkeeper who made fifteen saves against Ecuador, the most in a World Cup match since 1966. Curaçao's last line and their entire hope.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Amad Diallo</h4>
+          <div class="player-club">Manchester United</div>
+          <p>Ivory Coast's spark and most dangerous attacker. Direct, inventive and the man most likely to break Curaçao's stubborn resistance.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Simon Adingra</h4>
+          <div class="player-club">Brighton</div>
+          <p>Pace and trickery off the flank for the Elephants. A constant outlet who can stretch a defense that will spend all afternoon camped deep.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Curaçao are the smallest nation by population ever to play a men's World Cup. Their goalless draw with Ecuador earned a historic first point and one of the goalkeeping performances of the tournament.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Ivory Coast, 2024 Africa Cup of Nations champions, led Germany before conceding a stoppage-time winner. They must win here, and hope, to reach the knockout rounds.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 3: JAPAN V SWEDEN -->
+    <section class="match">
+      <p class="match-eyebrow">Group F · 4:00 PM PT · AT&amp;T Stadium, Arlington</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">Pick of the Day</span>
+        <span class="tag tag-pl">⚽ Gyökeres · Arsenal</span>
+        <span class="tag tag-pl">⚽ Mitoma · Brighton</span>
+      </div>
+      <h2 class="match-title">Japan <span class="vs">v</span> Sweden</h2>
+      <p class="match-dek">The tournament's favorite dark horse against two of the Premier League's deadliest forwards, with the top of Group F and serious bragging rights on the line.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:51%"></div>
+        <div class="seg-d" style="width:27%"></div>
+        <div class="seg-b" style="width:22%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Japan 51%</span>
+        <span><span class="dot dot-d"></span>Draw 27%</span>
+        <span><span class="dot dot-b"></span>Sweden 22%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>This is the connoisseur's match of the day. Japan have been quietly magnificent, drawing the Netherlands and then dismantling Tunisia 4-0, and they play the kind of fast, fluid, technically immaculate football that has made them the dark horse every shrewd observer keeps whispering about. Kaoru Mitoma and Takefusa Kubo conduct the orchestra, and a win here likely sends them through as Group F winners with a very dangerous reputation attached.</p>
+        <p>Sweden, by contrast, are a fascinating puzzle: blessed with arguably the most fearsome strike pairing at the entire tournament in Viktor Gyökeres and Alexander Isak, yet inconsistent enough to have been thrashed 5-1 by the Netherlands after hammering Tunisia themselves. They sit on three points and need a result to be sure of progressing, which means Graham Potter's side must finally make those two elite forwards count against a Japanese defense that is organized but not impregnable.</p>
+        <p>The contrast of styles is delicious: Japanese fluency and pressing against Swedish power and clinical finishing. Japan are narrow favorites and arguably the better team, but if Gyökeres and Isak get even a couple of clean looks, Sweden can win any game they play. Expect goals, expect swings, and expect this to be the most entertaining ninety minutes before the SoFi nightcap. If you sit down properly for one game today, make it this one.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Barely an upset given how level this is. Sweden's front two can win it outright, but a Japan side this slick could equally run riot. The genuine intrigue is whether Swedish quality up top can outweigh Japanese control everywhere else.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Kaoru Mitoma</h4>
+          <div class="player-club">Brighton</div>
+          <p>Japan's electric winger, all close control and acceleration. The man most likely to unpick a Sweden side that must commit forward.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Viktor Gyökeres</h4>
+          <div class="player-club">Arsenal</div>
+          <p>Ruthless, relentless and fresh off a Premier League title. Give him one chance and Sweden's afternoon transforms instantly.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Alexander Isak</h4>
+          <div class="player-club">Liverpool</div>
+          <p>Silky and clinical, the perfect foil to Gyökeres. Two genuinely elite finishers give Sweden a puncher's chance in any game.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Japan have reached the knockout stage at the last two World Cups and famously beat both Germany and Spain in 2022. Many quietly tip them as the team most likely to spring a deep run from outside the traditional elite.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Sweden's strike pair of Gyökeres and Isak is among the most valuable and lethal at the tournament, but inconsistency in their first two games has left them needing a result on the final matchday.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 4: TUNISIA V NETHERLANDS -->
+    <section class="match">
+      <p class="match-eyebrow">Group F · 4:00 PM PT · Arrowhead Stadium, Kansas City</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">Formality</span>
+        <span class="tag tag-pl">⚽ Van Dijk · Liverpool</span>
+      </div>
+      <h2 class="match-title">Tunisia <span class="vs">v</span> Netherlands</h2>
+      <p class="match-dek">An eliminated, badly bruised Tunisia against a Netherlands side that needs only to behave itself to top the group. The stakes are lopsided; the Dutch are not complaining.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:4%"></div>
+        <div class="seg-d" style="width:9%"></div>
+        <div class="seg-b" style="width:87%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Tunisia 4%</span>
+        <span><span class="dot dot-d"></span>Draw 9%</span>
+        <span><span class="dot dot-b"></span>Netherlands 87%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>Spare a thought, or perhaps avert your eyes, for Tunisia. They arrived at this World Cup having conceded zero goals across their entire African qualifying campaign, a fortress of a defense, and then promptly shipped five to Sweden and four to Japan, conceding nine in two games and exiting with their tournament in rubble. Now, already eliminated, they face the Netherlands, which is the football equivalent of stubbing your toe and then being asked to run a marathon.</p>
+        <p>The Netherlands, meanwhile, are cruising. After a thrilling opening draw with Japan they obliterated Sweden 5-1, and they need only a competent afternoon to top Group F and set up a favourable knockout path. Ronald Koeman can rest legs if he chooses, with Virgil van Dijk marshalling things and Cody Gakpo and Memphis Depay providing the cutting edge. They will want goals to bolster their goal difference, but the result itself is close to a foregone conclusion.</p>
+        <p>Realistically this is target practice, and the only real questions are the margin and whether Tunisia can salvage a sliver of pride with a goal to take home. For the Dutch, it is about staying switched on, avoiding injuries, and arriving at the knockouts in rhythm. For Tunisia, it is about dignity, and the small, defiant hope of denying a giant a clean sheet on the way out the door.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Vanishingly small. Tunisia have leaked nine goals in two games and are playing for nothing but pride. The only intrigue is whether they grab a consolation, and whether the Netherlands keep their concentration or let a dead rubber drift.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Cody Gakpo</h4>
+          <div class="player-club">Liverpool</div>
+          <p>The Netherlands' in-form wide threat. Direct, two-footed and exactly the player to add gloss against a demoralised defense.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Virgil van Dijk</h4>
+          <div class="player-club">Liverpool</div>
+          <p>The Dutch captain and defensive rock. Even in a routine game, his calm authority sets the tone for the side.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Hannibal Mejbri</h4>
+          <div class="player-club">Burnley</div>
+          <p>Tunisia's energetic midfielder and their best hope of a moment of quality on a tough afternoon. Tenacious and technical.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Tunisia conceded zero goals in African qualifying and then shipped nine in their first two World Cup matches. Few teams have endured a more brutal reality check at this tournament.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>The Netherlands and Japan are the class of Group F. A win here, combined with the Japan v Sweden result, determines whether the Dutch finish first or second and which knockout path they take.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 5: TÜRKIYE V USA -->
+    <section class="match">
+      <p class="match-eyebrow">Group D · 7:00 PM PT · SoFi Stadium, Inglewood</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">On Your Doorstep</span>
+        <span class="tag tag-pl">⚽ Pulisic · Milan</span>
+        <span class="tag tag-pl">⚽ Robinson · Fulham</span>
+      </div>
+      <h2 class="match-title">Türkiye <span class="vs">v</span> USA</h2>
+      <p class="match-dek">The USMNT have already won the group and get to throw a no-stakes party at SoFi. Türkiye are eliminated and playing for pride. It is the most relaxed a US World Cup night has ever been.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:27%"></div>
+        <div class="seg-d" style="width:24%"></div>
+        <div class="seg-b" style="width:49%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Türkiye 27%</span>
+        <span><span class="dot dot-d"></span>Draw 24%</span>
+        <span><span class="dot dot-b"></span>USA 49%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>Here is a luxury the USMNT have rarely, if ever, been able to afford: a final group game that means absolutely nothing to their qualification, because they have already won Group D outright. The win over Australia clinched it, Paraguay's defeat of Türkiye sealed top spot, and so tonight at SoFi, Mauricio Pochettino gets to do the thing every coach dreams of, rest his key men, hand minutes to fringe players itching to prove a point, and let a buzzing home crowd enjoy a World Cup night with the safety catch firmly on.</p>
+        <p>Türkiye, sadly for them, are already out, undone by that shock opening loss to Australia and a narrow defeat to Paraguay. They will play for pride, for the travelling fans, and for the chance to end a disappointing campaign on a high note against a rotated American side. They have quality and will fancy their chances against a USA second string, which gives this dead rubber a little more bite than the table suggests. Pride is a real and dangerous motivator.</p>
+        <p>For you, fifteen minutes down the road, this is pure enjoyment: a competitive World Cup match at SoFi with none of the usual American hand-wringing attached. Christian Pulisic, managed carefully through a minor knock, is reportedly hoping to feature, which would send the crowd into raptures. Win, lose or draw, the USA march on to the round of 32. Tonight is for the vibes, the squad players, and the sheer novelty of a stress-free US group finale. Enjoy every minute.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Plenty possible, and it would not really sting. A heavily rotated USA against a proud Türkiye side desperate for a parting win is a recipe for a surprise result that changes nothing about the standings. Treat any defeat as a glorified scrimmage, because that is exactly what it is.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Christian Pulisic</h4>
+          <div class="player-club">AC Milan</div>
+          <p>The USA's talisman, rested with a minor knock and reportedly hoping to feature. Any cameo would send the SoFi crowd wild.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Hakan Çalhanoğlu</h4>
+          <div class="player-club">Inter Milan</div>
+          <p>Türkiye's classy midfield orchestrator and set-piece weapon. The man to make a US second string pay if they switch off.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Folarin Balogun</h4>
+          <div class="player-club">Monaco</div>
+          <p>The USA forward who has impressed this tournament. A free, low-stakes night is the perfect stage to add another goal to his tally.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>The USA have won Group D and reached the round of 32, their first time topping a World Cup group since 2010. They will play their knockout match on July 1.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>This is the second World Cup match at SoFi for the USA, who opened the tournament here against Paraguay. The Inglewood venue will host knockout matches later in the competition.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 6: PARAGUAY V AUSTRALIA -->
+    <section class="match">
+      <p class="match-eyebrow">Group D · 7:00 PM PT · Levi's Stadium, Santa Clara</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">The Real Decider</span>
+        <span class="tag tag-pl">⚽ Irankunda · Watford</span>
+      </div>
+      <h2 class="match-title">Paraguay <span class="vs">v</span> Australia</h2>
+      <p class="match-dek">While the USA party next door, this is the game in Group D that actually matters: a straight shootout for second place and a ticket to the knockouts.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:33%"></div>
+        <div class="seg-d" style="width:42%"></div>
+        <div class="seg-b" style="width:25%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Paraguay 33%</span>
+        <span><span class="dot dot-d"></span>Draw 42%</span>
+        <span><span class="dot dot-b"></span>Australia 25%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>Here is the genuine drama of the evening, just up the coast from the SoFi festivities. Paraguay and Australia both sit on three points, both chasing the second qualifying spot behind the runaway USA, and the math is taut: Australia hold the edge on goal difference, which means Paraguay likely need a win, while the Socceroos can advance with a draw but dare not assume it. One of these sides goes to the round of 32, the other goes home, and ninety minutes will decide which.</p>
+        <p>Australia have been the group's great overachievers, stunning Türkiye in their opener thanks to teenage sensation Nestory Irankunda before a narrow loss to the USA. They are organized, hard-running and dangerous on the break, exactly the kind of disciplined side that knows how to grind out the result it needs. A draw sends them through, but they will be wary of sitting too deep and inviting the pressure that can undo a cautious team late.</p>
+        <p>Paraguay, by contrast, must win, and a side playing with that clarity of purpose can be dangerous. South American steel meets Australian grit in a true knockout-in-disguise, the kind of tense, scrappy, nervy occasion that the final round of group games throws up every four years. It will not be pretty, but it will be gripping, and for one of these teams it ends in heartbreak. Keep it on the second screen all evening.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Hard to call an upset when the teams are this level. The drama is the tightrope: Australia's draw-is-enough caution against Paraguay's must-win urgency. One goal, or one nervy mistake, likely decides who survives, and the goal-difference math could come down to the final kick.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Nestory Irankunda</h4>
+          <div class="player-club">Watford</div>
+          <p>Australia's teenage spark, whose stunning finish sank Türkiye. Pace, fearlessness and the ability to win a tight game in one moment.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Miguel Almirón</h4>
+          <div class="player-club">Paraguay talisman</div>
+          <p>Paraguay's most experienced attacking threat. Energy, directness and the know-how to drag his side to the win they must have.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Connor Metcalfe</h4>
+          <div class="player-club">Australia midfield</div>
+          <p>Scored against Türkiye and offers drive from midfield. The kind of all-action runner who thrives in a high-stakes scrap.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Australia stunned Türkiye 2-0 in their opener and sit level with Paraguay on three points, holding the advantage on goal difference heading into this winner-takes-second decider.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Both Group D games kick off simultaneously, so neither Paraguay nor Australia can play the scoreboard from the USA v Türkiye result. It is a clean, nerve-shredding sprint to the finish.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STANDINGS -->
+    <section>
+      <h2 class="section-title">The Big Picture · Final-Day Permutations</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Group D (before today)</caption>
+          <thead>
+            <tr><th>Team</th><th class="num">P</th><th class="num">GD</th><th class="num">PTS</th></tr>
+          </thead>
+          <tbody>
+            <tr class="qualify"><td>USA</td><td class="num">2</td><td class="num">+5</td><td class="num">6</td></tr>
+            <tr><td>Australia</td><td class="num">2</td><td class="num">0</td><td class="num">3</td></tr>
+            <tr><td>Paraguay</td><td class="num">2</td><td class="num">&#8211;2</td><td class="num">3</td></tr>
+            <tr><td>Türkiye</td><td class="num">2</td><td class="num">&#8211;3</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Group E (before today)</caption>
+          <thead>
+            <tr><th>Team</th><th class="num">P</th><th class="num">GD</th><th class="num">PTS</th></tr>
+          </thead>
+          <tbody>
+            <tr class="qualify"><td>Germany</td><td class="num">2</td><td class="num">+7</td><td class="num">6</td></tr>
+            <tr><td>Ivory Coast</td><td class="num">2</td><td class="num">0</td><td class="num">3</td></tr>
+            <tr><td>Ecuador</td><td class="num">2</td><td class="num">&#8211;1</td><td class="num">1</td></tr>
+            <tr><td>Curaçao</td><td class="num">2</td><td class="num">&#8211;6</td><td class="num">1</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Group F (before today)</caption>
+          <thead>
+            <tr><th>Team</th><th class="num">P</th><th class="num">GD</th><th class="num">PTS</th></tr>
+          </thead>
+          <tbody>
+            <tr class="qualify"><td>Japan</td><td class="num">2</td><td class="num">+4</td><td class="num">4</td></tr>
+            <tr class="qualify"><td>Netherlands</td><td class="num">2</td><td class="num">+4</td><td class="num">4</td></tr>
+            <tr><td>Sweden</td><td class="num">2</td><td class="num">0</td><td class="num">3</td></tr>
+            <tr><td>Tunisia</td><td class="num">2</td><td class="num">&#8211;8</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">USA (Group D) and Germany (Group E) have already won their groups; Tunisia are out. In Group D, Australia and Paraguay scrap for second, with Australia ahead on goal difference. In Group E, Ivory Coast hold the second spot but Ecuador can leapfrog them, while Curaçao need a near-miracle. In Group F, Japan and the Netherlands lead and Sweden must get a result to overhaul them. Every game today kicks off in a simultaneous pair, because FIFA enjoys a clean, calculator-proof finish.</p>
+    </section>
+
+    <footer>
+      <p>World Cup Daily · Briefing for Natalie · Thursday 25 June 2026 · Los Angeles</p>
+      <p>All kickoff times Pacific. Win probabilities are market-implied consensus and move. Facts checked against FIFA, ESPN, CBS Sports, Yahoo Sports, Sky Sports and others. Enjoy the football. ⚽</p>
+    </footer>
+  </div>
+
+</div>
+</body>
+</html>
