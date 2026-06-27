@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<title>World Cup Daily · Sat 27 June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    color-scheme:dark;
+    --ink:#0D1B2A;
+    --panel:#142537;
+    --flap:#1E374F;
+    --flap-edge:#0A1622;
+    --amber:#FFC857;
+    --pitch:#4ADE80;
+    --coral:#FF6B6B;
+    --paper:#F3EFE6;
+    --mute:#8CA0B5;
+    --arsenal:#EF3340;
+    --scot:#5BC0EB;
+    --rule:rgba(255,255,255,0.08);
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  html, body{
+    margin:0;
+    background:var(--ink) !important;
+  }
+
+  .page{
+    background:var(--ink) !important;
+    color:var(--paper) !important;
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+
+  .wrap{ max-width:760px; margin:0 auto; padding:0 1.25rem; }
+
+  a{ color:var(--amber); text-decoration:none; border-bottom:1px solid currentColor; }
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+    outline:2px solid var(--amber);
+    outline-offset:2px;
+  }
+
+  /* ---------- Ticker ---------- */
+  .ticker{
+    background:var(--flap-edge);
+    border-bottom:1px solid var(--rule);
+    overflow:hidden;
+    white-space:nowrap;
+    padding:0.5rem 0;
+  }
+  .ticker-track{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    color:var(--mute);
+    animation:ticker 42s linear infinite;
+    padding-left:100%;
+  }
+  .ticker-track span{ color:var(--amber); }
+  @keyframes ticker{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-100%); }
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead{ padding:2.5rem 0 1.5rem; }
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin:0 0 0.75rem;
+  }
+  .masthead h1{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    font-weight:700;
+    letter-spacing:0.03em;
+    font-size:clamp(2.4rem, 9vw, 4.2rem);
+    line-height:1.02;
+    margin:0;
+  }
+  .dateline{
+    font-family:'Space Mono', monospace;
+    font-size:0.78rem;
+    color:var(--mute);
+    letter-spacing:0.05em;
+    margin:0.6rem 0 1rem;
+  }
+  .standfirst{
+    font-size:1.1rem;
+    font-style:italic;
+    color:var(--paper);
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:1rem 0;
+    margin:0;
+  }
+
+  /* ---------- Section titles ---------- */
+  .section-title{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    font-size:1rem;
+    color:var(--amber);
+    margin:0 0 1rem;
+    padding-top:2.5rem;
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+  }
+  .section-title::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--rule);
+  }
+  .section-note{
+    font-family:'Space Mono', monospace;
+    font-size:0.78rem;
+    color:var(--mute);
+    margin:-0.5rem 0 1.25rem;
+  }
+
+  /* ---------- Departures board ---------- */
+  .board{ padding-bottom:0.5rem; }
+  .board-row{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    padding:0.85rem 0;
+    border-bottom:1px solid var(--rule);
+    transform-origin:top center;
+    animation:flapIn 0.6s ease both;
+  }
+  .board-row:nth-child(1){ animation-delay:0.05s; }
+  .board-row:nth-child(2){ animation-delay:0.2s; }
+  .board-row:nth-child(3){ animation-delay:0.35s; }
+  .board-row:nth-child(4){ animation-delay:0.5s; }
+  @keyframes flapIn{
+    from{ opacity:0; transform:rotateX(-90deg); }
+    to{ opacity:1; transform:rotateX(0deg); }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .board-row{ animation:none; }
+    .ticker-track{ animation:none; }
+  }
+  .flap-time{
+    font-family:'Space Mono', monospace;
+    font-weight:700;
+    font-size:0.85rem;
+    color:var(--amber);
+    background:var(--flap);
+    border-radius:4px;
+    padding:0.5rem 0.6rem;
+    min-width:84px;
+    text-align:center;
+    box-shadow:inset 0 -3px 0 rgba(0,0,0,0.35);
+    flex-shrink:0;
+  }
+  .board-main{ flex:1; min-width:0; }
+  .board-match{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:1.1rem;
+    letter-spacing:0.02em;
+  }
+  .board-match .vs{
+    color:var(--mute);
+    font-weight:400;
+    font-size:0.85em;
+    margin:0 0.35em;
+  }
+  .board-meta{
+    font-family:'Space Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--mute);
+    margin-top:0.2rem;
+  }
+
+  /* ---------- For You cards ---------- */
+  .grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1rem;
+  }
+  @media (max-width:640px){
+    .grid-2{ grid-template-columns:1fr; }
+  }
+  .card{
+    background:var(--panel);
+    border-radius:10px;
+    padding:1.25rem;
+    border-left:4px solid var(--accent, var(--amber));
+  }
+  .card-icon{ font-size:1.4rem; line-height:1; margin-bottom:0.5rem; }
+  .card h3{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    font-size:0.95rem;
+    margin:0 0 0.5rem;
+  }
+  .card p{ margin:0; font-size:0.95rem; }
+  .card-gold{ --accent:var(--amber); }
+  .card-red{ --accent:var(--arsenal); }
+  .card-green{ --accent:var(--pitch); }
+  .card-blue{ --accent:var(--scot); }
+
+  /* ---------- Match sections ---------- */
+  .match{ padding-top:2.75rem; border-top:1px solid var(--rule); }
+  .match-eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--mute);
+    margin-bottom:0.75rem;
+  }
+  .match-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+    margin-bottom:1rem;
+  }
+  .tag{
+    font-family:'Space Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:0.3rem 0.6rem;
+    border-radius:999px;
+    border:1px solid var(--rule);
+    color:var(--paper);
+  }
+  .tag-kicker{ background:var(--flap); color:var(--amber); border-color:var(--flap); font-weight:700; }
+  .tag-arsenal{ border-color:var(--arsenal); color:var(--arsenal); }
+  .tag-pl{ border-color:var(--pitch); color:var(--pitch); }
+
+  .match-title{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    font-weight:700;
+    letter-spacing:0.02em;
+    font-size:clamp(1.6rem, 6vw, 2.4rem);
+    margin:0 0 0.6rem;
+    line-height:1.1;
+  }
+  .match-title .vs{ color:var(--mute); font-weight:400; font-size:0.7em; margin:0 0.25em; }
+  .match-dek{
+    font-style:italic;
+    color:var(--mute);
+    font-size:1.05rem;
+    margin:0 0 1.25rem;
+  }
+
+  .prob-bar{
+    display:flex;
+    height:10px;
+    border-radius:999px;
+    overflow:hidden;
+    background:var(--flap);
+    margin:0 0 0.6rem;
+  }
+  .seg-a{ background:var(--pitch); }
+  .seg-d{ background:var(--mute); }
+  .seg-b{ background:var(--coral); }
+  .prob-labels{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1.25rem;
+    font-family:'Space Mono', monospace;
+    font-size:0.78rem;
+    color:var(--mute);
+    margin-bottom:1.5rem;
+  }
+  .dot{
+    width:8px; height:8px; border-radius:50%;
+    display:inline-block; margin-right:0.4em;
+  }
+  .dot-a{ background:var(--pitch); }
+  .dot-d{ background:var(--mute); }
+  .dot-b{ background:var(--coral); }
+  .prob-source{
+    display:block;
+    font-size:0.65rem;
+    color:var(--mute);
+    opacity:0.7;
+    margin-top:-1rem;
+    margin-bottom:1.5rem;
+  }
+
+  .story p{ margin:0 0 1rem; }
+  .story p:last-child{ margin-bottom:0; }
+
+  .callout{
+    background:var(--panel);
+    border-left:4px solid var(--coral);
+    border-radius:8px;
+    padding:1rem 1.25rem;
+    margin:1.5rem 0;
+  }
+  .callout-label{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-size:0.8rem;
+    color:var(--coral);
+    margin-bottom:0.35rem;
+  }
+  .callout p{ margin:0; font-size:0.95rem; }
+
+  .sub-title{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    font-size:0.85rem;
+    color:var(--amber);
+    margin:2rem 0 1rem;
+  }
+
+  .players{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0.85rem;
+    margin-bottom:1.5rem;
+  }
+  @media (max-width:640px){
+    .players{ grid-template-columns:1fr; }
+  }
+  .player{
+    background:var(--panel);
+    border-radius:8px;
+    padding:1rem;
+  }
+  .player-num{
+    font-family:'Space Mono', monospace;
+    font-size:0.75rem;
+    color:var(--amber);
+    letter-spacing:0.1em;
+  }
+  .player h4{
+    font-family:'Oswald', sans-serif;
+    font-size:1rem;
+    margin:0.35rem 0 0.1rem;
+    letter-spacing:0.01em;
+  }
+  .player-club{
+    font-family:'Space Mono', monospace;
+    font-size:0.65rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--mute);
+    margin-bottom:0.5rem;
+  }
+  .player p{ margin:0; font-size:0.88rem; color:var(--paper); }
+
+  .intel{
+    display:flex;
+    flex-direction:column;
+    gap:0.75rem;
+    margin-bottom:0.5rem;
+  }
+  .intel-item{
+    display:flex;
+    gap:0.75rem;
+    align-items:flex-start;
+    border:1px dashed var(--rule);
+    border-radius:8px;
+    padding:0.85rem 1rem;
+  }
+  .intel-icon{
+    font-family:'Space Mono', monospace;
+    font-size:0.7rem;
+    font-weight:700;
+    color:var(--ink);
+    background:var(--amber);
+    border-radius:50%;
+    width:1.4em; height:1.4em;
+    flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    margin-top:0.15rem;
+  }
+  .intel-item p{ margin:0; font-size:0.88rem; color:var(--mute); }
+
+  /* ---------- Score cards ---------- */
+  .score-card{
+    background:var(--panel);
+    border-radius:10px;
+    padding:1.1rem 1.25rem;
+  }
+  .score-card.pending{
+    background:transparent;
+    border:1px dashed var(--rule);
+    grid-column:1 / -1;
+  }
+  .score-meta{
+    font-family:'Space Mono', monospace;
+    font-size:0.65rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--mute);
+    margin-bottom:0.6rem;
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    flex-wrap:wrap;
+  }
+  .badge-upset{
+    background:var(--coral);
+    color:var(--ink);
+    font-weight:700;
+    border-radius:4px;
+    padding:0.1rem 0.4rem;
+    letter-spacing:0.1em;
+  }
+  .badge-live{
+    background:var(--amber);
+    color:var(--ink);
+    font-weight:700;
+    border-radius:4px;
+    padding:0.1rem 0.4rem;
+    letter-spacing:0.1em;
+  }
+  .score-line{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:1.05rem;
+    margin-bottom:0.6rem;
+    gap:0.5rem;
+  }
+  .score-line .score{
+    font-family:'Space Mono', monospace;
+    background:var(--flap);
+    color:var(--amber);
+    border-radius:4px;
+    padding:0.2rem 0.55rem;
+    flex-shrink:0;
+  }
+  .score-card p{ margin:0; font-size:0.88rem; color:var(--mute); }
+
+  /* ---------- Standings ---------- */
+  .table-wrap{ overflow-x:auto; margin-bottom:1.75rem; }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-family:'Space Mono', monospace;
+    font-size:0.82rem;
+    min-width:320px;
+  }
+  caption{
+    text-align:left;
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    font-size:0.85rem;
+    color:var(--paper);
+    margin-bottom:0.6rem;
+    font-weight:600;
+  }
+  th, td{
+    text-align:left;
+    padding:0.55rem 0.6rem;
+    border-bottom:1px solid var(--rule);
+  }
+  th{
+    color:var(--mute);
+    font-weight:400;
+    text-transform:uppercase;
+    font-size:0.68rem;
+    letter-spacing:0.1em;
+  }
+  td.num, th.num{ text-align:center; }
+  tr.qualify td:first-child{ color:var(--pitch); }
+  tr.qualify td:first-child::before{
+    content:"● ";
+    color:var(--pitch);
+  }
+  tr.pending td{ color:var(--mute); }
+  .table-note{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    color:var(--mute);
+    margin:-0.75rem 0 1.75rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--rule);
+    margin-top:3rem;
+    padding:1.75rem 0 3rem;
+    font-family:'Space Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.04em;
+    color:var(--mute);
+    line-height:1.8;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>ENGLAND 77%</span> v PANAMA 7% &nbsp;·&nbsp; <span>ARGENTINA 75%</span> v JORDAN 8% &nbsp;·&nbsp; <span>COLOMBIA 38%</span> v PORTUGAL 34% &nbsp;·&nbsp; <span>CROATIA 40%</span> v GHANA 30% &nbsp;·&nbsp; DEMBÉLÉ HAT-TRICK SINKS NORWAY 4-1 AS FRANCE WIN THE GROUP &nbsp;·&nbsp; CABO VERDE DRAW AGAIN AND REACH THE KNOCKOUTS, THE SMALLEST NATION EVER TO DO IT &nbsp;·&nbsp; SPAIN EDGE URUGUAY 1-0 AND SEND BIELSA HOME &nbsp;·&nbsp; <span>ALGERIA v AUSTRIA</span> 44 YEARS OF GRUDGE COMES DUE TONIGHT &nbsp;·&nbsp;
+    </div>
+  </div>
+
+  <div class="wrap">
+    <header class="masthead">
+      <p class="eyebrow">World Cup Daily · Saturday 27 June 2026 · Los Angeles</p>
+      <h1>The Group Stage Signs Off With Messi, Ronaldo, England, and a Forty-Four-Year-Old Grudge That Has Been Quietly Simmering Since Before Most of These Players Were Born</h1>
+      <p class="dateline">Your daily World Cup briefing</p>
+      <p class="standfirst">The last day of the group stage, and the schedule has saved its richest card for the encore: six matches in simultaneous pairs, Messi and Ronaldo on the same afternoon, England chasing top spot while looking faintly nervous about it, and, gloriously, Algeria versus Austria, a fixture dragging the ghost of the 1982 Disgrace of Gijón blinking back into the daylight. First, though, raise a glass to Cabo Verde, because yesterday an island of 525,000 people did something no nation that small has ever done, and it deserves a standing ovation before we get to the chaos.</p>
+    </header>
+
+    <!-- WHAT YOU MISSED -->
+    <section>
+      <h2 class="section-title">First, What You Missed · Friday 26 June</h2>
+      <p class="section-note">Dembélé announced himself, an island made history, and Bielsa's Uruguay went home in a manner nobody saw coming.</p>
+      <div class="grid-2">
+        <article class="score-card">
+          <div class="score-meta"><span class="badge-upset">Statement</span> Group I · Foxborough</div>
+          <div class="score-line"><span>🇫🇷 France</span><span class="score">4&#8211;1</span><span>🇳🇴 Norway</span></div>
+          <p>So much for our heavyweight coin flip. France remembered they are terrifying and Ousmane Dembélé ran the whole thing, helping himself to a hat-trick as Les Bleus brushed aside Haaland's Norway 4-1 to win Group I with a perfect nine points. Haaland got one back for pride and the Ballon d'Or chatter around Dembélé promptly went nuclear. France look every inch the team to beat, which is a slightly alarming sentence to type this early. Norway settle for second and a date with destiny anyway.</p>
+        </article>
+        <article class="score-card">
+          <div class="score-meta"><span class="badge-upset">History</span> Group H · Houston</div>
+          <div class="score-line"><span>🇨🇻 Cabo Verde</span><span class="score">0&#8211;0</span><span>🇸🇦 Saudi Arabia</span></div>
+          <p>They did it. A goalless draw was all Cabo Verde needed, and a goalless draw is exactly what they got, and with it an archipelago of roughly 525,000 people became the smallest nation in history to reach the World Cup knockout rounds, on their tournament debut, no less. Their reward is a meeting with Lionel Messi and Argentina, which is the kind of sentence that would have sounded clinically insane a month ago. Vozinha kept another clean sheet. The fairytale does not just continue, it gets a sequel.</p>
+        </article>
+        <article class="score-card">
+          <div class="score-meta"><span class="badge-upset">Shock Exit</span> Group H · Guadalajara</div>
+          <div class="score-line"><span>🇺🇾 Uruguay</span><span class="score">0&#8211;1</span><span>🇪🇸 Spain</span></div>
+          <p>Spain did the professional thing, won 1-0, topped the group, and looked every bit the contender. The story, though, is at the other end: Marcelo Bielsa's Uruguay, a pre-tournament dark horse stacked with talent, are going home after the group stage. Two-time world champions, Valverde, Núñez, the lot, undone by a sluggish campaign and an inability to beat anyone when it mattered. A genuinely stunning early exit for a side many fancied for the last eight.</p>
+        </article>
+        <article class="score-card">
+          <div class="score-meta">Group G · Vancouver</div>
+          <div class="score-line"><span>🇧🇪 Belgium</span><span class="score">5&#8211;1</span><span>🇳🇿 New Zealand</span></div>
+          <p>Belgium finally remembered they are good, thumping New Zealand 5-1 to escape the group after two earlier draws, with the golden generation kicking into life at last. In the simultaneous Group G game, Egypt drew 1-1 with Iran to advance and hand Salah at least one more World Cup knockout night, while Iran exited agonizingly on the fine print. And over in Group I, Senegal hammered Iraq 5-0 to keep their own slim third-place hopes flickering. A busy night across the bracket.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TODAY'S RUNNING ORDER -->
+    <section>
+      <h2 class="section-title">Today's Running Order · Pacific Time</h2>
+      <p class="section-note">Six matches, three groups (J, K, L), all in simultaneous pairs. The group stage bows out with Messi, Ronaldo and a grudge for the ages.</p>
+      <div class="board">
+        <div class="board-row">
+          <div class="flap-time">2:00 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇵🇦 Panama <span class="vs">v</span> England 🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+            <div class="board-meta">Group L · East Rutherford, NJ</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">2:00 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇭🇷 Croatia <span class="vs">v</span> Ghana 🇬🇭</div>
+            <div class="board-meta">Group L · Philadelphia</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">4:30 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇨🇴 Colombia <span class="vs">v</span> Portugal 🇵🇹</div>
+            <div class="board-meta">Group K · Miami Gardens</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">4:30 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇨🇩 DR Congo <span class="vs">v</span> Uzbekistan 🇺🇿</div>
+            <div class="board-meta">Group K · Atlanta</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">7:00 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇯🇴 Jordan <span class="vs">v</span> Argentina 🇦🇷</div>
+            <div class="board-meta">Group J · Arlington, TX</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">7:00 PM</div>
+          <div class="board-main">
+            <div class="board-match">🇩🇿 Algeria <span class="vs">v</span> Austria 🇦🇹</div>
+            <div class="board-meta">Group J · Kansas City</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOR YOU -->
+    <section>
+      <h2 class="section-title">The Storylines</h2>
+      <div class="grid-2">
+        <article class="card card-gold">
+          <div class="card-icon">🐐</div>
+          <h3>Both GOATs, One Last Saturday</h3>
+          <p>Pour one out for the calendar gods: Messi and Ronaldo, on the same afternoon, almost certainly closing out the final group stage of their careers within hours of each other. Messi's Argentina handle the formalities against Jordan at 7pm. Ronaldo, never one to take the easy route, has to actually earn his at 4:30pm in a genuine shoot-out with Colombia. Two men who have spent twenty years refusing to let the other have a quiet day, signing off the group stage in lockstep one final time. And with SoFi hosting knockout games as the bracket heats up, there is a non-zero chance one of them ends up playing a short drive from us. We will bore our grandchildren about this.</p>
+        </article>
+        <article class="card card-red">
+          <div class="card-icon">⭐</div>
+          <h3>Club Connections</h3>
+          <p>A Premier League bonanza. England are an all-star XI: Kane (Bayern), Saka, Rice and Gabriel (Arsenal), Bellingham (Real Madrid), Foden and Palmer. Ghana have Kudus (Tottenham), Croatia boast Gvardiol (Man City), Colombia bring Luis Díaz (Bayern), Portugal run through Bruno Fernandes (Man Utd), and Algeria's Aït-Nouri (Man City) and Mahrez headline the grudge match.</p>
+        </article>
+        <article class="card card-green">
+          <div class="card-icon">🌶️</div>
+          <h3>Where to Point Your Eyeballs</h3>
+          <p>Good news for the West Coast: every kickoff today lands in prime LA hours, no 5am alarms required. If you only have eyes for one game, make it the 4:30pm Colombia v Portugal, two gorgeous attacking sides trading blows for top spot while a 41-year-old icon demands the ball like it owes him money. But the secret must-watch is the 7pm Algeria v Austria, which the bookmakers have filed under "routine" and which is, in fact, a 44-year-old blood feud finally coming due. Fire up the group chat. The odds have no column for vengeance. We do.</p>
+        </article>
+        <article class="card card-blue">
+          <div class="card-icon">👻</div>
+          <h3>History Watch · The Ghost of Gijón</h3>
+          <p>Tonight Algeria face Austria, and 44 years of grievance come with them. At the 1982 World Cup, West Germany and Austria played out the infamous "Disgrace of Gijón," a limp 1-0 that conveniently sent both through and dumped Algeria out. FIFA invented simultaneous final kickoffs precisely because of it. Algeria have waited four decades for this rematch. The players are too young to remember Gijón. They grew up knowing every second of it anyway.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MATCH 1: COLOMBIA V PORTUGAL -->
+    <section class="match">
+      <p class="match-eyebrow">Group K · 4:30 PM PT · Hard Rock Stadium, Miami Gardens</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">Top-Spot Shoot-Out</span>
+        <span class="tag tag-pl">⚽ L. Díaz · Bayern</span>
+        <span class="tag tag-pl">⚽ B. Fernandes · Man Utd</span>
+      </div>
+      <h2 class="match-title">Colombia <span class="vs">v</span> Portugal</h2>
+      <p class="match-dek">Two of the tournament's most watchable sides collide for top spot in Group K, with Cristiano Ronaldo desperate to drag Portugal there and Colombia needing only a draw to do it themselves.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:38%"></div>
+        <div class="seg-d" style="width:28%"></div>
+        <div class="seg-b" style="width:34%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Colombia 38%</span>
+        <span><span class="dot dot-d"></span>Draw 28%</span>
+        <span><span class="dot dot-b"></span>Portugal 34%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>This is the pick of the day for sheer quality. Colombia have been one of the tournament's genuine delights, all rhythm and flair and ruthless transitions, and they arrive having already qualified with a 3-1 win over Uzbekistan and a 1-0 win over DR Congo. Built around the electric Luis Díaz and the eternal craft of James Rodríguez, they need only a draw to top the group, and they have looked good enough to fancy beating anyone. Pole position is theirs to lose.</p>
+        <p>Portugal, meanwhile, are the soap opera that will not end. After Ronaldo finally ended his drought with a brace in the 5-0 demolition of Uzbekistan, the noise around him quieted for approximately one news cycle, and now he faces his sternest test: a Colombia side with the pace and quality to punish Portugal's perennial defensive uncertainty. Roberto Martínez has the players, Bruno Fernandes and Rafael Leão chief among them, but Portugal must win to top the group, which means coming at Colombia rather than sitting back.</p>
+        <p>The contrast is delicious: Colombian flair against Portuguese star power, with a 41-year-old icon chasing one more headline. Portugal are probably safe to advance regardless given their goal difference, but pride and seeding are real, and neither of these sides knows how to play a boring game. Expect goals, expect drama, and expect at least one moment where Ronaldo demands the ball as if by royal decree. The most entertaining ninety minutes of the day.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Not really an upset, more a genuine coin flip between two excellent teams. Colombia's pace against Portugal's shaky back line is the key duel. If Díaz gets in behind early, Portugal's need to chase the game could leave them horribly exposed at the other end.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Luis Díaz</h4>
+          <div class="player-club">Bayern Munich</div>
+          <p>Colombia's electric talisman. Pace, directness and end product, the man most likely to expose Portugal's defensive frailty.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Cristiano Ronaldo</h4>
+          <div class="player-club">Al-Nassr</div>
+          <p>Drought broken, brand intact, and desperate to lead Portugal to top spot in what is surely his last World Cup. Never write him off.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>James Rodríguez</h4>
+          <div class="player-club">Colombia captain</div>
+          <p>The 2014 Golden Boot winner, still orchestrating. On the big stage, his left foot can decide a game in an instant.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Colombia have already qualified and need only a draw to win Group K. Their best World Cup run came in 2014, reaching the quarter-finals with a young James Rodríguez starring.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Portugal's 5-0 win over Uzbekistan, with Ronaldo scoring twice to end his drought, all but secured their progress. They must win here to top the group and avoid a tougher knockout draw.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 2: ALGERIA V AUSTRIA -->
+    <section class="match">
+      <p class="match-eyebrow">Group J · 7:00 PM PT · Arrowhead Stadium, Kansas City</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">The Grudge Match</span>
+        <span class="tag tag-pl">⚽ Aït-Nouri · Man City</span>
+        <span class="tag tag-pl">⚽ Sabitzer · Dortmund</span>
+      </div>
+      <h2 class="match-title">Algeria <span class="vs">v</span> Austria</h2>
+      <p class="match-dek">A winner-takes-second decider soaked in forty-four years of history. Algeria have waited since 1982 to settle a score with Austria, and tonight, at last, they get their rematch.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:38%"></div>
+        <div class="seg-d" style="width:30%"></div>
+        <div class="seg-b" style="width:32%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Algeria 38%</span>
+        <span><span class="dot dot-d"></span>Draw 30%</span>
+        <span><span class="dot dot-b"></span>Austria 32%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>Some fixtures carry history. This one carries a grudge with its own Wikipedia page. At the 1982 World Cup, West Germany and Austria contrived the infamous "Disgrace of Gijón," a bloodless 1-0 in which, once West Germany scored early, both sides simply stopped trying, a result that sent the two European nations through and eliminated Algeria, who had already played their final game. The outrage was so total that FIFA changed the rules forever, mandating that the final group games kick off simultaneously. Algeria have been waiting forty-four years to look Austria in the eye with something on the line. Tonight they get it.</p>
+        <p>The stakes are real beyond the symbolism. Argentina have won the group, so this is a straight shoot-out for second place: Austria, with the superior goal difference, need only a draw to go through, while Algeria must win. There is even a deliciously perverse subplot, because the runner-up is likely to draw Spain in the round of 32, meaning second place is a prize some might secretly prefer to avoid. But do not insult Algeria by suggesting they would calculate. As their federation has pointedly noted, Algeria have never played for anything but victory, and they intend to win this one outright, history and Spain be damned.</p>
+        <p>On the pitch, it is finely poised. Algeria carry real quality through Manchester City's Rayan Aït-Nouri and the veteran guile of Riyad Mahrez, while Austria are Ralf Rangnick's disciplined, well-drilled unit, content to sit on a draw they would happily take. The football may or may not be a classic. The narrative is unmissable. Forty-four years of grievance, ninety minutes to settle it. Do not even think about changing the channel.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Genuinely even, which only adds to the tension. Austria's draw-is-enough position could tempt them into a cautious shell, exactly the kind of passivity that invites a motivated Algeria to pounce. With this much history in the air, a flashpoint or a late winner feels almost scripted.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Riyad Mahrez</h4>
+          <div class="player-club">Al-Ahli</div>
+          <p>Algeria's talisman and former Premier League title-winner. Still capable of conjuring a decisive moment from nothing on the grandest night.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Marcel Sabitzer</h4>
+          <div class="player-club">Borussia Dortmund</div>
+          <p>Austria's experienced engine and set-piece threat. If they are to hold firm for the draw they need, his control is central.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Rayan Aït-Nouri</h4>
+          <div class="player-club">Manchester City</div>
+          <p>Algeria's flying full-back and a genuine attacking weapon. The kind of player who can win a tight, tense night with one overlap.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>The 1982 "Disgrace of Gijón," in which West Germany and Austria played out a mutually convenient 1-0 that eliminated Algeria, is the reason all final group-stage matches now kick off simultaneously.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Argentina have won Group J, so this is a winner-takes-second decider. Austria need only a draw thanks to their superior goal difference; Algeria must win to advance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 3: PANAMA V ENGLAND -->
+    <section class="match">
+      <p class="match-eyebrow">Group L · 2:00 PM PT · MetLife Stadium, East Rutherford</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">Star Power</span>
+        <span class="tag tag-pl">⚽ Kane · Bayern</span>
+        <span class="tag tag-pl">⚽ Bellingham · Real Madrid</span>
+      </div>
+      <h2 class="match-title">Panama <span class="vs">v</span> England</h2>
+      <p class="match-dek">England, loaded and already qualified, against an eliminated Panama side playing for pride. The Three Lions need a win to top the group and avoid the dreaded scenic route.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:7%"></div>
+        <div class="seg-d" style="width:16%"></div>
+        <div class="seg-b" style="width:77%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Panama 7%</span>
+        <span><span class="dot dot-d"></span>Draw 16%</span>
+        <span><span class="dot dot-b"></span>England 77%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>England arrive in New Jersey in the curious position of being both excellent and faintly unconvincing, which is the most England thing about them. They opened with a thumping 4-2 win over Croatia, then drew a blank in a goalless stalemate with Ghana that launched the customary fortnight of national soul-searching. They are already through, but they need a win here to top Group L and steer clear of a nastier knockout path. The squad is absurdly deep, Kane, Bellingham, Saka, Foden, Palmer, and on paper this should be straightforward.</p>
+        <p>Panama, sadly, are already eliminated, their tournament ended by that agonizing last-gasp loss to Ghana and a narrow defeat to Croatia. They will play for pride, for their traveling support, and for the small glory of giving a giant a fright on the way out. Los Canaleros are organized and physical, and a team with nothing to lose can be awkward for a side carrying the weight of expectation, but the gulf in quality is enormous and England should have far too much.</p>
+        <p>Realistically this is a procession, and the only suspense is the margin and whether England can rediscover the attacking fluency that deserted them against Ghana. For Thomas Tuchel, it is about momentum, sharpness and topping the group cleanly. For Panama, it is about leaving the World Cup with their heads high and perhaps one moment worth taking home. England by a comfortable few, you would think, but this is England, so nobody is allowed to fully relax.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Minimal, but England drawing 0-0 with Ghana is a fresh reminder they can mislay their shooting boots without warning. If Panama frustrate them and the goal will not come, the familiar English anxiety could descend on MetLife in a hurry.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Jude Bellingham</h4>
+          <div class="player-club">Real Madrid</div>
+          <p>England's biggest tournament talent, arriving late into the box and driving from deep. The man to break a stubborn block.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Harry Kane</h4>
+          <div class="player-club">Bayern Munich</div>
+          <p>England's captain and record scorer. Drops deep to create and still finishes everything. A relentless threat against tiring legs.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Adalberto Carrasquilla</h4>
+          <div class="player-club">Panama engine</div>
+          <p>The midfield metronome who makes Panama tick. Their best hope of a competitive afternoon and a parting moment of pride.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>England have already qualified for the knockouts but need a win over Panama to secure top spot in Group L and a more favorable bracket position. Their 0-0 with Ghana stalled the momentum from a 4-2 opening win.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Panama are already eliminated after a 95th-minute defeat to Ghana and a 1-0 loss to Croatia. They play only for pride at their second-ever World Cup.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 4: CROATIA V GHANA -->
+    <section class="match">
+      <p class="match-eyebrow">Group L · 2:00 PM PT · Lincoln Financial Field, Philadelphia</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">Survival Decider</span>
+        <span class="tag tag-pl">⚽ Gvardiol · Man City</span>
+        <span class="tag tag-pl">⚽ Kudus · Tottenham</span>
+      </div>
+      <h2 class="match-title">Croatia <span class="vs">v</span> Ghana</h2>
+      <p class="match-dek">The 2018 finalists against the Black Stars, with second place and survival on the line. Ghana are already through; Croatia must avoid defeat or risk going home.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:40%"></div>
+        <div class="seg-d" style="width:30%"></div>
+        <div class="seg-b" style="width:30%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Croatia 40%</span>
+        <span><span class="dot dot-d"></span>Draw 30%</span>
+        <span><span class="dot dot-b"></span>Ghana 30%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>Croatia's tournament has been a slow-motion lesson in mortality. The 2018 finalists and 2022 bronze medallists were hammered 4-2 by England, then recovered to edge Panama 1-0, and now arrive at a final game where the math is unforgiving: avoid defeat against Ghana and they progress, most likely as a third-placed team, but lose and Luka Modrić's glittering international career could end on the spot. For an ageing side built around a 40-year-old midfield maestro, every minute now feels borrowed.</p>
+        <p>Ghana, by contrast, are sitting pretty. The Black Stars have already qualified on four points, having beaten Panama and held England to that disciplined goalless draw, and they carry a genuine match-winner in Tottenham's Mohammed Kudus. A win lifts them above whoever they need to and could even leapfrog England for a better seeding. Crucially, they can play this with freedom while Croatia play it with fear, and freedom tends to be the better fuel in a tense knockout-style game.</p>
+        <p>Croatia are slight favorites on quality, and Modrić and Mateo Kovačić can still control a game when they dictate its rhythm. But Ghana have the pace, the physicality and the Kudus-shaped threat to punish a creaking Croatian back line, and the pressure sits squarely on the Europeans. If Ghana score first, the sight of Croatia chasing the game with their tournament life on the line could become the drama of the afternoon. A proud old side staring at the exit makes for compelling, nervy viewing.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Very live. Croatia looked old and stretched against England, and Ghana have the tools to exploit it. A Ghana win would send a former finalist crashing out and might just write the final chapter of Luka Modrić's international story. The tension will be exquisite.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Luka Modrić</h4>
+          <div class="player-club">Croatia captain</div>
+          <p>Forty years old and still the timeless heart of this Croatia side. If their tournament is to continue, it runs through him one more time.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Mohammed Kudus</h4>
+          <div class="player-club">Tottenham</div>
+          <p>Ghana's most dangerous attacker and a genuine match-winner. The man most likely to send a former finalist tumbling out.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Joško Gvardiol</h4>
+          <div class="player-club">Manchester City</div>
+          <p>Croatia's elite young defender, asked to hold a creaking back line together under enormous pressure. His composure could be decisive.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Croatia reached the 2018 final and finished third in 2022. A defeat here could eliminate them and likely end the international career of 40-year-old Luka Modrić.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Ghana have already qualified on four points and came within a Luis Suárez handball of a World Cup semi-final in 2010. They can finish second with a win and play this with total freedom.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 5: JORDAN V ARGENTINA -->
+    <section class="match">
+      <p class="match-eyebrow">Group J · 7:00 PM PT · AT&amp;T Stadium, Arlington</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">Messi Watch</span>
+        <span class="tag tag-pl">⚽ Messi · Inter Miami</span>
+      </div>
+      <h2 class="match-title">Jordan <span class="vs">v</span> Argentina</h2>
+      <p class="match-dek">The defending champions, already through as group winners, against eliminated debutants Jordan. The only question is how much of Messi we get to see.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:8%"></div>
+        <div class="seg-d" style="width:17%"></div>
+        <div class="seg-b" style="width:75%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Jordan 8%</span>
+        <span><span class="dot dot-d"></span>Draw 17%</span>
+        <span><span class="dot dot-b"></span>Argentina 75%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>Argentina arrive at the final group game with everything already settled. They have won Group J, they are unbeaten, and Lionel Messi sits atop the tournament's scoring charts with five goals, rolling back the years in what is surely his final World Cup. The big tactical question is simply how much Lionel Scaloni chooses to rest, weighing a buzzing crowd's desire to see the great man against the sense in keeping precious legs fresh for the knockouts. Even a cameo from Messi is worth the price of admission.</p>
+        <p>Jordan, at their first-ever World Cup, are already eliminated, and their tournament has been a story of brave defeats: a respectable loss to Austria, a heartbreaking late collapse against Algeria. They will play this for pride and for the slim, glorious hope of a goal against the world champions that their fans can treasure forever. Musa Al-Taamari remains their spark, and a nation experiencing its first World Cup will want to sign off with a performance to be proud of.</p>
+        <p>Realistically Argentina win comfortably even in second gear, and the romance is purely in the watching: this may be one of the last times Messi graces a World Cup group stage, and these moments are running out. Whether he plays ninety minutes or twenty, the cameras will follow his every touch, because greatness on a farewell tour is its own reward. Tune in for him, and stay for the inevitable standing ovation.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Slim, and even slimmer if Argentina field a strong side. A heavily rotated Argentina could in theory invite a Jordan surprise, but "frustrate the world champions and then concede to a substitute" is the usual script. Jordan's realistic dream is a goal, not a result.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Lionel Messi</h4>
+          <div class="player-club">Inter Miami</div>
+          <p>Five goals and counting, atop the scoring charts in his final World Cup. The reason to watch, whether for ninety minutes or a cameo.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Julián Álvarez</h4>
+          <div class="player-club">Atlético Madrid</div>
+          <p>Argentina's tireless forward, likely to feature heavily if Messi is rested. Relentless pressing and a poacher's finish.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Musa Al-Taamari</h4>
+          <div class="player-club">Rennes</div>
+          <p>Jordan's brightest spark and their best hope of a historic goal against the champions. Capable of lighting up a farewell.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Argentina have already won Group J and reached the round of 32, where they will face Cabo Verde. Messi leads the tournament's scoring chart with five goals in what is widely expected to be his last World Cup.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Jordan are at their first World Cup and have been eliminated, but a goal against the defending champions would be a landmark moment in their footballing history.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 6: DR CONGO V UZBEKISTAN -->
+    <section class="match">
+      <p class="match-eyebrow">Group K · 4:30 PM PT · Mercedes-Benz Stadium, Atlanta</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">Win-or-Bust</span>
+        <span class="tag tag-pl">⚽ Wissa · Newcastle</span>
+      </div>
+      <h2 class="match-title">DR Congo <span class="vs">v</span> Uzbekistan</h2>
+      <p class="match-dek">A straight knockout in all but name. The winner keeps alive real hopes of a third-place berth; the loser goes home. Two debutants-at-heart with everything to play for.</p>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:47%"></div>
+        <div class="seg-d" style="width:28%"></div>
+        <div class="seg-b" style="width:25%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>DR Congo 47%</span>
+        <span><span class="dot dot-d"></span>Draw 28%</span>
+        <span><span class="dot dot-b"></span>Uzbekistan 25%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus</span>
+
+      <div class="story">
+        <p>While the glamor games hog the spotlight, this quietly is one of the most consequential matches of the day for the teams involved. Both DR Congo and Uzbekistan still harbor genuine hopes of sneaking into the knockouts as one of the eight best third-placed sides, but the equation is brutally simple: win, and you give yourself a real chance; anything less and you are almost certainly going home. It is a final-day knockout dressed in group-stage clothing.</p>
+        <p>DR Congo are the marginal favorites and have the better of the recent narrative, having opened the tournament by holding Ronaldo's Portugal to a 1-1 draw through sheer organisation and grit before a narrow loss to Colombia. Back at a World Cup after a 52-year absence, the Leopards are physical, disciplined and carry Premier League quality in Newcastle's Yoane Wissa. A win likely sends them through, and they will fancy it against a Uzbek side with a battered goal difference to repair.</p>
+        <p>Uzbekistan, at their first-ever World Cup under Fabio Cannavaro, have been brave but face the steeper climb: they likely need not just a win but a sizeable one to drag their minus-seven goal difference back toward respectability. That is a tall order against an organized DR Congo, but desperation breeds adventure, and a Uzbek side throwing caution to the wind could make this a genuinely open, end-to-end affair. For two nations savouring rare World Cup air, it is everything.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Hard to frame as an upset when it is this even, but Uzbekistan must win big, which means taking risks that could leave them exposed to the exact counterattacking threat DR Congo thrive on. The team that handles the pressure of a winner-takes-all night better will likely prevail.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Yoane Wissa</h4>
+          <div class="player-club">Newcastle</div>
+          <p>DR Congo's Premier League forward and main attacking outlet. The man most likely to settle a tight, high-stakes night.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Eldor Shomurodov</h4>
+          <div class="player-club">Uzbekistan talisman</div>
+          <p>Uzbekistan's experienced striker, tasked with delivering the big win they need. Their best hope of a famous knockout push.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Abdukodir Khusanov</h4>
+          <div class="player-club">Manchester City</div>
+          <p>Uzbekistan's Premier League defender, who will need to marshal the back line while his side chases the game. A pivotal figure.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>DR Congo's 1-1 draw with Portugal on their return after a 52-year World Cup absence was one of the group stage's notable results. A win here likely sends them through as a best third-placed team.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Uzbekistan, at their first-ever World Cup under 2006 World Cup winner Fabio Cannavaro, must win and likely win big to overturn a minus-seven goal difference and chase a third-place spot.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STANDINGS -->
+    <section>
+      <h2 class="section-title">The Big Picture · Final-Day Permutations</h2>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Group J (before today)</caption>
+          <thead>
+            <tr><th>Team</th><th class="num">P</th><th class="num">GD</th><th class="num">PTS</th></tr>
+          </thead>
+          <tbody>
+            <tr class="qualify"><td>Argentina</td><td class="num">2</td><td class="num">+5</td><td class="num">6</td></tr>
+            <tr><td>Austria</td><td class="num">2</td><td class="num">0</td><td class="num">3</td></tr>
+            <tr><td>Algeria</td><td class="num">2</td><td class="num">&#8211;2</td><td class="num">3</td></tr>
+            <tr><td>Jordan</td><td class="num">2</td><td class="num">&#8211;3</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Group K (before today)</caption>
+          <thead>
+            <tr><th>Team</th><th class="num">P</th><th class="num">GD</th><th class="num">PTS</th></tr>
+          </thead>
+          <tbody>
+            <tr class="qualify"><td>Colombia</td><td class="num">2</td><td class="num">+3</td><td class="num">6</td></tr>
+            <tr class="qualify"><td>Portugal</td><td class="num">2</td><td class="num">+4</td><td class="num">4</td></tr>
+            <tr><td>DR Congo</td><td class="num">2</td><td class="num">&#8211;1</td><td class="num">1</td></tr>
+            <tr><td>Uzbekistan</td><td class="num">2</td><td class="num">&#8211;6</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Group L (before today)</caption>
+          <thead>
+            <tr><th>Team</th><th class="num">P</th><th class="num">GD</th><th class="num">PTS</th></tr>
+          </thead>
+          <tbody>
+            <tr class="qualify"><td>England</td><td class="num">2</td><td class="num">+2</td><td class="num">4</td></tr>
+            <tr class="qualify"><td>Ghana</td><td class="num">2</td><td class="num">0</td><td class="num">4</td></tr>
+            <tr><td>Croatia</td><td class="num">2</td><td class="num">&#8211;1</td><td class="num">3</td></tr>
+            <tr><td>Panama</td><td class="num">2</td><td class="num">&#8211;1</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Argentina (Group J) and Colombia (pole in Group K) lead, with Portugal needing a win to top Group K. In Group J, Austria need only a draw in the grudge match to take second; Algeria must win. In Group L, England top the group with a win, Ghana are already through, and Croatia must avoid defeat against Ghana to survive. Panama, Jordan and Uzbekistan are out or all but gone. Every game today kicks off in a simultaneous pair, a rule born from the very scandal Algeria and Austria revisit tonight.</p>
+    </section>
+
+    <footer>
+      <p>World Cup Daily · Saturday 27 June 2026 · Los Angeles</p>
+      <p>All kickoff times Pacific. Win probabilities are market-implied consensus and move. Facts checked against FIFA, ESPN, CBS Sports, Yahoo Sports, Sky Sports, Al Jazeera and others. The group stage ends today. Enjoy the football. ⚽</p>
+    </footer>
+  </div>
+
+</div>
+</body>
+</html>
