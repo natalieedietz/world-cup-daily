@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="dark" />
-<title>World Cup Daily · Sun 28 June 2026</title>
+<title>World Cup Daily · Mon 29 June 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -514,6 +514,62 @@
     color:var(--mute);
     line-height:1.8;
   }
+  .cc{ display:inline-block; font-family:'Space Mono',monospace; font-weight:700; font-size:0.78em; letter-spacing:0.04em; background:var(--flap-edge); color:var(--amber); border:1px solid var(--rule); border-radius:3px; padding:0.06em 0.34em; margin:0 0.12em; vertical-align:0.06em; line-height:1.35; }
+  .score-line .cc{ font-size:0.62em; vertical-align:0.18em; }
+  .board-match .cc{ font-size:0.66em; }
+  .info-line{ display:flex; align-items:baseline; justify-content:space-between; gap:0.6em; font-family:'Space Mono',monospace; padding:0.1em 0 0.5em; border-bottom:1px solid var(--rule); margin-bottom:0.6em; }
+  .info-line .il-key{ color:var(--amber); font-weight:700; font-size:0.82em; letter-spacing:0.04em; text-transform:uppercase; }
+  .info-line .il-val{ color:var(--mute); font-size:0.82em; text-align:right; }
+  /* ---- VISUAL ELEMENTS (all inline SVG / CSS, render everywhere) ---- */
+  .match-crests{ display:flex; align-items:center; justify-content:center; gap:0; margin:0.4em 0 0.9em; }
+  .crest{ width:74px; height:84px; flex:0 0 auto; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.35)); }
+  .crest-mid{ display:flex; flex-direction:column; align-items:center; gap:0.2em; margin:0 1.1em; }
+  .crest-vs{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.5em; color:var(--amber); line-height:1; }
+  .crest-kick{ font-family:'Space Mono',monospace; font-size:0.62em; color:var(--mute); letter-spacing:0.05em; white-space:nowrap; }
+  .crest-name{ font-family:'Oswald',sans-serif; font-weight:600; font-size:0.62em; letter-spacing:0.06em; text-transform:uppercase; fill:var(--paper); }
+  .crest-code{ font-family:'Space Mono',monospace; font-weight:700; font-size:1.05em; }
+
+  .pitch-rule{ height:34px; margin:1.4em 0; border-radius:6px; background:
+      linear-gradient(90deg, rgba(74,222,128,0.10), rgba(74,222,128,0.16)),
+      var(--panel);
+    border:1px solid var(--rule); position:relative; overflow:hidden; }
+  .pitch-rule svg{ position:absolute; inset:0; width:100%; height:100%; }
+
+  .statchips{ display:grid; grid-template-columns:repeat(3,1fr); gap:0.6em; margin:0.3em 0 0.6em; }
+  .statchip{ display:flex; flex-direction:column; gap:0.28em; background:var(--flap-edge); border:1px solid var(--rule); border-radius:8px; padding:0.7em 0.8em; }
+  .statchip .sc-top{ display:flex; align-items:center; gap:0.4em; }
+  .statchip svg{ width:15px; height:15px; flex:0 0 auto; }
+  .statchip .sc-label{ font-family:'Space Mono',monospace; font-size:0.62em; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--mute); }
+  .statchip .sc-val{ font-family:'Oswald',sans-serif; font-size:1.0em; line-height:1.2; font-weight:600; color:var(--paper); }
+  .statchip .sc-val b{ color:var(--amber); font-weight:700; }
+  @media (max-width:560px){ .statchips{ grid-template-columns:1fr; } }
+
+  .card .card-svg{ width:30px; height:30px; display:block; margin-bottom:0.45em; }
+  .sectionmark{ display:flex; align-items:center; gap:0.6em; margin-bottom:0.2em; }
+  .sectionmark svg{ width:22px; height:22px; flex:0 0 auto; }
+  /* ---- TOP-SECTION VISUALS ---- */
+  .glance{ display:grid; grid-template-columns:repeat(4,1fr); gap:0.6em; margin:1.4em 0 0.4em; }
+  .glance-tile{ background:linear-gradient(160deg, var(--panel), var(--flap-edge)); border:1px solid var(--rule); border-radius:10px; padding:0.85em 0.6em; text-align:center; position:relative; overflow:hidden; }
+  .glance-tile::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--amber); opacity:0.85; }
+  .glance-num{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.85em; line-height:1; color:var(--amber); }
+  .glance-num span{ font-size:0.5em; color:var(--mute); font-weight:600; }
+  .glance-lab{ font-family:'Space Mono',monospace; font-size:0.6em; letter-spacing:0.06em; text-transform:uppercase; color:var(--mute); margin-top:0.4em; }
+  @media (max-width:560px){ .glance{ grid-template-columns:repeat(2,1fr); } }
+
+  .tourbar{ margin:1.3em 0 0.2em; }
+  .tourbar-track{ height:9px; border-radius:999px; background:var(--flap-edge); border:1px solid var(--rule); overflow:hidden; position:relative; }
+  .tourbar-fill{ height:100%; border-radius:999px 0 0 999px; background:linear-gradient(90deg, var(--pitch), var(--amber)); }
+  .tourbar-stops{ display:flex; justify-content:space-between; margin-top:0.5em; font-family:'Space Mono',monospace; font-size:0.6em; letter-spacing:0.04em; text-transform:uppercase; color:var(--mute); }
+  .tourbar-stops b{ color:var(--amber); font-weight:700; }
+  .tourbar-stops span.done{ color:var(--pitch); }
+
+  .hero-result{ display:flex; align-items:center; gap:1.1em; background:linear-gradient(135deg, rgba(74,222,128,0.10), var(--panel)); border:1px solid var(--rule); border-left:3px solid var(--pitch); border-radius:12px; padding:1.1em 1.2em; margin:0.2em 0 0.4em; }
+  .hero-badge{ flex:0 0 auto; font-family:'Space Mono',monospace; font-size:0.6em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink); background:var(--pitch); padding:0.3em 0.6em; border-radius:4px; }
+  .hero-score{ font-family:'Oswald',sans-serif; font-weight:700; line-height:1; }
+  .hero-score .hs-teams{ font-size:0.62em; color:var(--mute); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:0.25em; }
+  .hero-score .hs-main{ font-size:1.5em; color:var(--paper); }
+  .hero-score .hs-main b{ color:var(--amber); }
+  .hero-note{ font-family:'Source Serif 4',serif; font-size:0.82em; color:var(--mute); border-left:1px solid var(--rule); padding-left:1em; }
 </style>
 </head>
 <body>
@@ -521,192 +577,447 @@
 
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>KNOCKOUTS BEGIN</span> &nbsp;·&nbsp; <span>CANADA 52%</span> v SOUTH AFRICA 22% &nbsp;·&nbsp; ONE GAME TODAY, WINNER-TAKES-ALL, AT SOFI ON YOUR DOORSTEP &nbsp;·&nbsp; ALGERIA v AUSTRIA ENDED 3-3 IN A GRUDGE-MATCH CLASSIC THAT SENT BOTH THROUGH AND DUMPED IRAN OUT &nbsp;·&nbsp; MESSI OFF THE BENCH TO SINK JORDAN &nbsp;·&nbsp; KANE PASSES LINEKER AS ENGLAND'S ALL-TIME WORLD CUP TOP SCORER &nbsp;·&nbsp; <span>WHOEVER WINS TODAY MAKES THEIR NATION'S FIRST-EVER KNOCKOUT HISTORY</span> &nbsp;·&nbsp;
+      <span>BRAZIL 60%</span> v JAPAN 16% &nbsp;·&nbsp; <span>GERMANY 58%</span> v PARAGUAY 17% &nbsp;·&nbsp; <span>NETHERLANDS 42%</span> v MOROCCO 30% &nbsp;·&nbsp; THREE KNOCKOUT TIES TODAY, ALL WIN-OR-FLY-HOME &nbsp;·&nbsp; CANADA BEAT SOUTH AFRICA 1-0 ON A LATE GOAL TO REACH THE LAST 16 FOR THE FIRST TIME EVER &nbsp;·&nbsp; <span>NETHERLANDS v MOROCCO</span> IS THE PICK OF THE ROUND, A 2022 SEMIFINAL REMATCH IN ALL BUT NAME &nbsp;·&nbsp; JAPAN ONCE BEAT GERMANY AND SPAIN, NOW THEY GET BRAZIL &nbsp;·&nbsp;
     </div>
   </div>
 
   <div class="wrap">
     <header class="masthead">
-      <p class="eyebrow">World Cup Daily · Sunday 28 June 2026 · Los Angeles</p>
-      <h1>The Group Stage Is Dead, Long Live the Knockouts: One Single, Solitary, Win-or-Fly-Home Match Today, and It Is Being Played Fifteen Minutes From Your Front Door</h1>
+      <p class="eyebrow">World Cup Daily · Monday 29 June 2026 · Los Angeles</p>
+      <h1>The Knockouts Hit Full Throttle: Brazil Meet the Dark Horse Nobody Wants to Play, Germany Try to Remember How to Walk in a Straight Line, and the Netherlands Get Morocco in the Tie of the Round</h1>
       <p class="dateline">Your daily World Cup briefing</p>
-      <p class="standfirst">After seventeen days, seventy-two group games, a German banana skin, a USMNT meltdown that meant nothing, and a tiny island that broke the world's heart, the safety net is gone. The Round of 32 begins, and FIFA, in its infinite theatrical wisdom, has scheduled exactly one match for opening day: South Africa versus Canada, two nations who have never in their histories won a World Cup knockout game, at SoFi Stadium in Inglewood. Win and you make history. Lose and you go home. There is no third option anymore. Buckle up.</p>
+      <p class="standfirst">Yesterday was the polite single-match overture. Today the Round of 32 throws open all its doors: three win-or-go-home ties, no second legs, no away goals, no mercy. Brazil face a Japan side that has made a habit of humbling European giants, Germany face a Paraguay side that would happily make the game as ugly as a tax audit, and the Netherlands draw Morocco in a fixture dripping with 2022 history. First, though, a tip of the cap to Canada, who did something on your doorstep last night that no Canadian team had ever managed.</p>
+
+      <div class="glance" role="presentation">
+        <div class="glance-tile"><div class="glance-num">31</div><div class="glance-lab">Teams left</div></div>
+        <div class="glance-tile"><div class="glance-num">3</div><div class="glance-lab">Games today</div></div>
+        <div class="glance-tile"><div class="glance-num">15</div><div class="glance-lab">Ties to a champ</div></div>
+        <div class="glance-tile"><div class="glance-num">20<span> days</span></div><div class="glance-lab">To the final</div></div>
+      </div>
+
+      <div class="tourbar" role="presentation" aria-hidden="true">
+        <div class="tourbar-track"><div class="tourbar-fill" style="width:62%"></div></div>
+        <div class="tourbar-stops">
+          <span class="done">Groups ✓</span>
+          <span><b>Round of 32</b></span>
+          <span>R16</span>
+          <span>QF</span>
+          <span>SF</span>
+          <span>Final</span>
+        </div>
+      </div>
     </header>
 
     <!-- WHAT YOU MISSED -->
     <section>
-      <h2 class="section-title">First, What You Missed · Saturday 27 June</h2>
-      <p class="section-note">The group stage signed off with a grudge-match classic, a Messi cameo, a Kane milestone, and a wild night of qualification math.</p>
+      <h2 class="section-title">First, What You Missed · Sunday 28 June</h2>
+      <p class="section-note">One game, one slice of history, fifteen minutes down the road.</p>
+
+      <div class="hero-result">
+        <span class="hero-badge">History at SoFi</span>
+        <div class="hero-score">
+          <div class="hs-teams">Round of 32 · Inglewood</div>
+          <div class="hs-main"><span class="cc">RSA</span> South Africa <b>0&#8211;1</b> Canada <span class="cc">CAN</span></div>
+        </div>
+        <div class="hero-note">Canada's first-ever World Cup knockout win.</div>
+      </div>
+      <p style="margin:0.4em 0 1.2em; color:var(--paper); font-size:0.94em;">The knockouts opened on our doorstep and delivered a slow-burn thriller. South Africa, true to their entire tournament, defended like men guarding the last bread in a famine, and for long stretches it looked like they might drag the favorites to extra time and beyond. Then, late, Canada finally found the breakthrough, and with it became the first Canadian team in history to win a World Cup knockout match and reach the last 16. Jesse Marsch, the coach his own country passed over, is now one win from a quarter-final. Bafana go home with their heads high and a tournament to be proud of. SoFi roared.</p>
+
       <div class="grid-2">
         <article class="score-card">
-          <div class="score-meta"><span class="badge-upset">Grudge Settled</span> Group J · Kansas City</div>
-          <div class="score-line"><span>🇩🇿 Algeria</span><span class="score">3&#8211;3</span><span>🇦🇹 Austria</span></div>
-          <p>Forty-four years of waiting, and the ghost of Gijón got the send-off it deserved: bedlam. Algeria and Austria traded blows in a breathless 3-3, Marcel Sabitzer rifling in a screamer, Rafik Belghali willing the ball past three defenders, and Algeria smashing the post late with a would-be winner. The deliciously ironic punchline: the draw sent both teams through and eliminated Iran, so the two nations once accused of a stitch-up against Algeria advanced alongside Algeria this time. History rhymes, occasionally with a grin.</p>
+          <div class="score-meta">The Bracket Opens</div>
+          <div class="info-line"><span class="il-key">Round of 32</span><span class="il-val">31 teams left</span></div>
+          <p>And then there were 31. Canada march on to face the winner of tonight's Netherlands v Morocco tie in the Round of 16 on July 4, in Houston. One down, fifteen knockout ties to go before a champion is crowned in New Jersey on the 19th of July. The safety net is gone for everyone now: from here, every single match is somebody's last. The tournament just got serious, and today it gets loud.</p>
         </article>
         <article class="score-card">
-          <div class="score-meta">Group J · Arlington</div>
-          <div class="score-line"><span>🇯🇴 Jordan</span><span class="score">1&#8211;3</span><span>🇦🇷 Argentina</span></div>
-          <p>Argentina were cruising 2-0 through Giovani Lo Celso and a Lautaro Martínez penalty, with Lionel Scaloni having pointedly left Messi on the bench, when the great man could not help himself. On in the second half, Messi scored the third in the 80th minute, because of course he did, the man treats "dead rubber" as a personal challenge. Jordan, at their first World Cup, leave with their heads high and a goal against the champions to show the grandchildren.</p>
+          <div class="score-meta">Looking Ahead · The Doorstep</div>
+          <div class="info-line"><span class="il-key">Next at SoFi</span><span class="il-val">Thu · Spain v Austria</span></div>
+          <p>A heads-up for the local calendar: SoFi hosts its next knockout tie on Thursday, when Spain, the European champions, take on Austria, fresh from that 3-3 grudge-match classic with Algeria. Two more reasons to keep an eye on Inglewood as the bracket narrows. But that is Thursday's problem. Today belongs to Brazil, Germany and the Dutch.</p>
         </article>
-        <article class="score-card">
-          <div class="score-meta"><span class="badge-upset">Milestone</span> Group L · East Rutherford</div>
-          <div class="score-line"><span>🇵🇦 Panama</span><span class="score">0&#8211;2</span><span>🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</span></div>
-          <p>England were their familiar selves, labored and then suddenly lethal, with Jude Bellingham heading in off a corner and then teeing up Harry Kane, whose 67th-minute header was his 11th World Cup goal, taking him past Gary Lineker as England's all-time leading World Cup scorer. The Three Lions top Group L. Tuchel has promised they will improve in the knockouts, which is precisely what every England manager says at precisely this point every time.</p>
-        </article>
-        <article class="score-card">
-          <div class="score-meta">Groups K &amp; L · Miami &amp; Philadelphia</div>
-          <div class="score-line"><span>🇨🇴 Colombia</span><span class="score">0&#8211;0</span><span>🇵🇹 Portugal</span></div>
-          <p>Colombia and Portugal played out a tepid 0-0 that suited both, Colombia taking top spot in Group K and Ronaldo's Portugal sliding through in second, which means the dreamed-of Messi-Ronaldo collision is now postponed until a possible final and probably forever. Elsewhere, Croatia beat Ghana 2-1 to survive as runners-up (Ghana advance third), and DR Congo, back after a 52-year absence, completed a 3-1 comeback over Uzbekistan to reach the knockouts as a best third-placed side. The Leopards are roaring.</p>
-        </article>
+      </div>
+      <article class="score-card" style="margin-top:1em;">
+        <div class="score-meta">The Story So Far</div>
+        <div class="info-line"><span class="il-key">Group Stage</span><span class="il-val">Complete · 72 games</span></div>
+        <p>Seventeen days, seventy-two group games, and a tournament already stuffed with the unforgettable: Cabo Verde and a goalkeeper's mum, the German banana skin, Ecuador's revenge, Curaçao's fairytale, the Gijón grudge finally settled in chaos. The group stage was a feast. The knockouts promise to be a brawl. We would not have it any other way.</p>
+      </article>
       </div>
     </section>
 
     <!-- TODAY'S RUNNING ORDER -->
     <section>
       <h2 class="section-title">Today's Running Order · Pacific Time</h2>
-      <p class="section-note">A single match. The Round of 32 eases in with one win-or-go-home tie before the floodgates open tomorrow. Savor the quiet before the storm.</p>
+      <p class="section-note">Three knockout ties, spread across the day. Two heavyweight favorites with something to prove, and one genuine coin-flip classic to close.</p>
       <div class="board">
         <div class="board-row">
-          <div class="flap-time">12:00 PM</div>
+          <div class="flap-time">10:00 AM</div>
           <div class="board-main">
-            <div class="board-match">🇿🇦 South Africa <span class="vs">v</span> Canada 🇨🇦</div>
-            <div class="board-meta">Round of 32 · Inglewood (SoFi)</div>
+            <div class="board-match"><span class="cc">BRA</span> Brazil <span class="vs">v</span> Japan <span class="cc">JPN</span></div>
+            <div class="board-meta">Round of 32 · Houston</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">1:30 PM</div>
+          <div class="board-main">
+            <div class="board-match"><span class="cc">GER</span> Germany <span class="vs">v</span> Paraguay <span class="cc">PAR</span></div>
+            <div class="board-meta">Round of 32 · Foxborough, MA</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="flap-time">6:00 PM</div>
+          <div class="board-main">
+            <div class="board-match"><span class="cc">NED</span> Netherlands <span class="vs">v</span> Morocco <span class="cc">MAR</span></div>
+            <div class="board-meta">Round of 32 · Monterrey</div>
           </div>
         </div>
       </div>
-      <p class="table-note">That is the entire slate. One game, knockout football, no second chances, on your doorstep. Tomorrow the Round of 32 ramps up to three matches a day, including Brazil v Japan and Germany v Paraguay, but today belongs entirely to Inglewood.</p>
+      <div class="pitch-rule" role="presentation" aria-hidden="true">
+        <svg viewBox="0 0 760 34" preserveAspectRatio="none">
+          <g fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.4">
+            <rect x="1" y="1" width="758" height="32"/>
+            <line x1="380" y1="1" x2="380" y2="33"/>
+            <circle cx="380" cy="17" r="9"/>
+            <rect x="1" y="7" width="34" height="20"/>
+            <rect x="725" y="7" width="34" height="20"/>
+          </g>
+          <circle cx="380" cy="17" r="2.2" fill="rgba(255,200,87,0.85)"/>
+        </svg>
+      </div>
     </section>
 
-    <!-- FOR YOU -->
+    <!-- THE STORYLINES -->
     <section>
       <h2 class="section-title">The Storylines</h2>
       <div class="grid-2">
         <article class="card card-gold">
-          <div class="card-icon">🏟️</div>
-          <h3>SoFi, On Your Doorstep, For the Knockouts</h3>
-          <p>The single most convenient World Cup fixture you will ever get: a knockout match in our backyard, at noon on a Sunday. South Africa v Canada opens the entire Round of 32 at SoFi, and with the stadium's translucent roof keeping the LA sun off, it is a pristine, climate-controlled stage for the first win-or-go-home drama of the tournament. If there were ever a day to actually be in the building, or at least watch knowing it is happening down the road, this is it.</p>
+          <div class="card-icon"><svg class="card-svg" viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.5V11c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V5.5Z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg></div>
+          <h3>The Dark Horse Problem</h3>
+          <p>Brazil are the five-time champions and overwhelming favorites, but they have drawn the one team nobody wanted: Japan, who at the last World Cup beat both Germany and Spain in the same tournament, just to prove the first one was not a fluke. The Samurai Blue play fearless, fluid, ferociously organized football, and they will not be remotely starstruck. If Brazil are even slightly off, this is the banana skin of the entire round.</p>
         </article>
         <article class="card card-red">
-          <div class="card-icon">⭐</div>
+          <div class="card-icon"><svg class="card-svg" viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 9.2l-4 4 1 5.8L12 16l-5 3 1-5.8-4-4 5.5-.7Z"/></svg></div>
           <h3>Club Connections</h3>
-          <p>A genuinely strong cast for a so-called underdog tie. Canada are captained by Alphonso Davies (Bayern Munich), though he is racing a hamstring to be fit, and led up front by Jonathan David, now at Juventus after a summer move, fresh off a group-stage hat-trick. South Africa counter with Lyle Foster (Burnley) and the dependable Ronwen Williams in goal, plus a squad drawn heavily from Mamelodi Sundowns and Orlando Pirates.</p>
+          <p>A loaded cast today. Brazil parade Vinícius Júnior and Rodrygo (both Real Madrid) plus Raphinha (Barcelona); Japan counter with Kaoru Mitoma (Brighton) and Takefusa Kubo (Real Sociedad). Germany run through Florian Wirtz (Liverpool), Jamal Musiala (Bayern) and Kai Havertz (Arsenal). The Netherlands lean on Virgil van Dijk and Cody Gakpo (both Liverpool), with Morocco's Achraf Hakimi (PSG) and Brahim Díaz (Real Madrid) headlining the pick of the round.</p>
         </article>
         <article class="card card-green">
-          <div class="card-icon">🌶️</div>
-          <h3>The One-Match Verdict</h3>
-          <p>With only one game, there is no multi-screen juggling today, just full, undivided attention on a fascinating clash of styles. Canada's pace and European-honed talent against South Africa's disciplined, low-block defending and a goalkeeper in the form of his life. It will not be a goal fest, the bookmakers expect under three, but knockout tension has a way of turning cagey into unbearable. Settle in properly.</p>
+          <div class="card-icon"><svg class="card-svg" viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3-2 4-2 7a2 2 0 0 0 4 0c0-1 0-1 .5-2 1.5 1.5 2.5 3 2.5 5a5 5 0 0 1-10 0c0-3.5 3-5 5-10Z"/></svg></div>
+          <h3>Where to Point Your Eyeballs</h3>
+          <p>Good news for the West Coast: the action runs 10am to evening, all in prime LA hours. If you watch one game start to finish, make it the 6pm Netherlands v Morocco, a near coin-flip between two genuine quarter-final contenders and a spiritual rematch of Morocco's stunning 2022 run. But settle in early for Brazil v Japan at 10am, because if there is going to be a giant-killing today, that is where it starts. Fire up the group chat.</p>
         </article>
         <article class="card card-blue">
-          <div class="card-icon">🇿🇦</div>
+          <div class="card-icon"><svg class="card-svg" viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v4a6 6 0 0 1-12 0Z"/><path d="M6 6H4a2 2 0 0 0 2 3"/><path d="M18 6h2a2 2 0 0 1-2 3"/><path d="M9 19h6"/><path d="M12 14v5"/></svg></div>
           <h3>Adopt-a-Team Watch</h3>
-          <p>Cabo Verde have carried the underdog torch all tournament, and here is a lovely postscript: their goalkeeper Vozinha's mother, initially blocked by a US visa bond, has had her fee waived and will travel to watch her son in the knockouts. As for today, South Africa are the romantic pick, a defensively stubborn side chasing the first knockout win in Bafana Bafana history against a co-host favorite. Neutral hearts will lean green and gold.</p>
+          <p>With the islanders' run paused for the day, point your underdog love at Morocco, the Atlas Lions, who in 2022 became the first African and Arab nation ever to reach a World Cup semifinal, dumping out Spain and Portugal along the way. They are not really underdogs anymore, they are a genuine force, and a deep run from them electrifies fans from Casablanca to, frankly, all over LA. Tonight they get the Dutch. Lean in.</p>
         </article>
       </div>
     </section>
 
-    <!-- THE MATCH -->
+    <!-- MATCH 1: BRAZIL V JAPAN -->
     <section class="match">
-      <p class="match-eyebrow">Round of 32 · 12:00 PM PT · SoFi Stadium, Inglewood</p>
+      <p class="match-eyebrow">Round of 32 · 10:00 AM PT · NRG Stadium, Houston</p>
       <div class="match-tags">
-        <span class="tag tag-kicker">On Your Doorstep · First Knockout</span>
-        <span class="tag tag-pl">⚽ Davies · Bayern</span>
-        <span class="tag tag-pl">⚽ J. David · Juventus</span>
+        <span class="tag tag-kicker">Giant-Killing Watch</span>
+        <span class="tag tag-pl">⚽ Vinícius Jr · Real Madrid</span>
+        <span class="tag tag-pl">⚽ Mitoma · Brighton</span>
       </div>
-      <h2 class="match-title">South Africa <span class="vs">v</span> Canada</h2>
-      <p class="match-dek">Two nations who have never won a World Cup knockout match, one ticket to the last 16, and a slice of history guaranteed for whoever survives ninety minutes (or more) in Inglewood.</p>
+      <h2 class="match-title">Brazil <span class="vs">v</span> Japan</h2>
+      <p class="match-dek">The five-time champions against the dark horse who has made a career of humbling giants. Brazil are favorites, but Japan are precisely the wrong opponent to take lightly.</p>
+      <div class="match-crests">
+        <svg class="crest" viewBox="0 0 74 84" role="img" aria-label="Brazil">
+  <defs><clipPath id="shBRA"><path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z"/></clipPath></defs>
+  <g clip-path="url(#shBRA)">
+    <rect x="0" y="0" width="74" height="84" fill="#FEDD00"/>
+    <path d="M0 84 L74 0 V84 Z" fill="#009C3B"/>
+    <rect x="0" y="0" width="74" height="84" fill="rgba(0,0,0,0.06)"/>
+  </g>
+  <path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z" fill="none" stroke="#0A1622" stroke-width="2.5"/>
+  <text x="37" y="40" text-anchor="middle" class="crest-code" fill="#fff" stroke="#0A1622" stroke-width="0.6" paint-order="stroke" style="font-family:'Space Mono',monospace;font-weight:700;font-size:19px;">BRA</text>
+</svg>
+        <div class="crest-mid"><span class="crest-vs">VS</span><span class="crest-kick">10:00 AM PT</span></div>
+      <div class="statchips"><span class="statchip"><span class="sc-top"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0Z"/></svg><span class="sc-label">Brazil titles</span></span><span class="sc-val"><b>5</b> · most ever</span></span><span class="statchip"><span class="sc-top"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="sc-label">Last won</span></span><span class="sc-val"><b>2002</b></span></span><span class="statchip"><span class="sc-top"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7l1.8 1.3-.7 2.2h-2.2l-.7-2.2Z" fill="#FFC857"/></svg><span class="sc-label">Japan in 2022</span></span><span class="sc-val">Beat <b>GER &amp; ESP</b></span></span></div>
+        <svg class="crest" viewBox="0 0 74 84" role="img" aria-label="Japan">
+  <defs><clipPath id="shJPN"><path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z"/></clipPath></defs>
+  <g clip-path="url(#shJPN)">
+    <rect x="0" y="0" width="74" height="84" fill="#BC002D"/>
+    <path d="M0 84 L74 0 V84 Z" fill="#0A1A4F"/>
+    <rect x="0" y="0" width="74" height="84" fill="rgba(0,0,0,0.06)"/>
+  </g>
+  <path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z" fill="none" stroke="#0A1622" stroke-width="2.5"/>
+  <text x="37" y="40" text-anchor="middle" class="crest-code" fill="#fff" stroke="#0A1622" stroke-width="0.6" paint-order="stroke" style="font-family:'Space Mono',monospace;font-weight:700;font-size:19px;">JPN</text>
+</svg>
+      </div>
 
       <div class="prob-bar">
-        <div class="seg-a" style="width:22%"></div>
-        <div class="seg-d" style="width:26%"></div>
-        <div class="seg-b" style="width:52%"></div>
+        <div class="seg-a" style="width:60%"></div>
+        <div class="seg-d" style="width:24%"></div>
+        <div class="seg-b" style="width:16%"></div>
       </div>
       <div class="prob-labels">
-        <span><span class="dot dot-a"></span>South Africa 22%</span>
-        <span><span class="dot dot-d"></span>Draw 26%</span>
-        <span><span class="dot dot-b"></span>Canada 52%</span>
+        <span><span class="dot dot-a"></span>Brazil 60%</span>
+        <span><span class="dot dot-d"></span>Draw 24%</span>
+        <span><span class="dot dot-b"></span>Japan 16%</span>
       </div>
       <span class="prob-source">Win probability · market-implied consensus · draw resolves in extra time and penalties</span>
 
       <div class="story">
-        <p>Here is a fact to start the heart racing: neither of these teams has ever, in their entire footballing history, won a match in the World Cup knockout rounds. South Africa had never even reached this stage before this week, having crashed out in the group at all three previous attempts, in 1998, in 2002, and most painfully in 2010, when they became the first host nation ever to fail to escape their own group. Canada, for their part, waited 36 years between World Cups, qualified in 1986 and 2022, and lost all six matches across those two tournaments without so much as a point until this summer. Whoever wins today does something their nation has never done. That is the entire, glorious weight of this fixture.</p>
-        <p>Canada are the favorites, and on paper deservedly so. Jesse Marsch, the American coach famously passed over by his own national team and clearly relishing every minute of the irony, has built a side with genuine bite: they hammered Qatar 6-0 in the group stage, with Juventus striker Jonathan David helping himself to a hat-trick, and they bring European pedigree and pace all over the pitch. The one enormous caveat is captain Alphonso Davies, the Bayern Munich talisman and emotional figurehead of this entire Canadian generation, who is racing to be fit after a hamstring problem. A fully firing Davies changes the geometry of the game; a half-fit or absent one removes their most electrifying weapon.</p>
-        <p>South Africa, under the wily 73-year-old Belgian coach Hugo Broos, who won the Africa Cup of Nations with Cameroon back in 2017, are precisely the kind of opponent nobody wants in a knockout: organized, compact, defensively bloody-minded, and content to make a game ugly. The problem is the other end of the pitch. Bafana Bafana have scored just twice in the entire tournament and have never managed more than a single goal in any match, which against a Canada side that will see plenty of the ball is a worrying ledger. Their hope rests on goalkeeper Ronwen Williams, who has been superb, and on nicking something from a set piece or a counter and then defending it with their lives.</p>
-        <p>The likeliest script is a tight, tense, low-scoring affair, exactly the sort of game where one moment of quality or one defensive lapse decides everything, and where the specter of extra time and penalties looms large. Canada have the better players and the louder, more sympathetic crowd, given the co-host status, and they should edge it. But knockout football is a great leveller, South Africa have already exceeded every expectation just by being here, and if Williams stands tall and the game stays goalless deep into the second half, the pressure on the favorites will become its own opponent. History is on the line for both. Do not move from the sofa.</p>
+        <p>Here is the tie the Brazilian camp will privately have dreaded. On paper it is a mismatch: Brazil are the most successful nation in World Cup history, with a front line of Vinícius Júnior, Rodrygo and Raphinha that can take any defense apart, and under Carlo Ancelotti they have rounded into ominous form after a sluggish start, topping their group and looking every inch contenders. They have the talent, the pedigree and the swagger. They are, rightly, heavy favorites to win this and march deep into the bracket.</p>
+        <p>And yet. Japan are not here to admire the scenery. At the 2022 World Cup, the Samurai Blue did something almost nobody manages, beating both Germany and Spain in the same group, two former world champions dispatched by a side that presses in coordinated waves and counters like a thunderclap. They drew with the Netherlands and dismantled Tunisia in this tournament, Kaoru Mitoma and Takefusa Kubo provide genuine match-winning quality, and they will treat Brazil not as untouchable gods but as simply the next big name to be toppled. Neymar, back in the Brazil fold, has called Japan a favorite opponent, which is the kind of thing that ages either beautifully or catastrophically.</p>
+        <p>The likeliest outcome remains a Brazilian win, perhaps even a comfortable one if Vinícius gets isolated against the full-back and the samba machine clicks. But knockout football strips away the cushion of a second chance, and Japan are tailor-made to exploit any complacency. If they score first and make Brazil anxious, Houston could witness the upset of the tournament. This is the must-watch opener for a reason: the favorite is brilliant, and the underdog has a very specific, very recent history of eating brilliant favorites alive.</p>
       </div>
 
       <div class="callout">
         <div class="callout-label">Upset Watch</div>
-        <p>Very much alive. South Africa's whole identity is frustrating better teams, and Canada without a fully fit Davies are considerably less frightening. If Bafana keep it goalless past the hour and force the game toward extra time, the favorites' nerves could betray them. Knockout football has authored bigger shocks on smaller margins.</p>
+        <p>Among the liveliest of the round. Japan have beaten Germany and Spain on this stage in living memory, and a single early goal could turn Brazilian flair into Brazilian panic. If the Samurai Blue press high and Brazil's defense blinks, do not be remotely surprised to see a giant fall in Houston.</p>
       </div>
 
       <h3 class="sub-title">Players to Watch</h3>
       <div class="players">
         <article class="player">
           <span class="player-num">01</span>
-          <h4>Jonathan David</h4>
-          <div class="player-club">Juventus</div>
-          <p>Canada's clinical spearhead, fresh off a group-stage hat-trick. Cool, mobile and ruthless, the man most likely to unlock a stubborn South African block.</p>
+          <h4>Vinícius Júnior</h4>
+          <div class="player-club">Real Madrid</div>
+          <p>Brazil's match-winner-in-chief, now in full flow. Electric, infuriating to mark, and capable of settling a knockout tie with one moment of magic.</p>
         </article>
         <article class="player">
           <span class="player-num">02</span>
-          <h4>Ronwen Williams</h4>
-          <div class="player-club">Mamelodi Sundowns</div>
-          <p>South Africa's outstanding captain and goalkeeper. A penalty-shootout hero at the 2024 Africa Cup of Nations, and Bafana's single biggest reason to believe.</p>
+          <h4>Kaoru Mitoma</h4>
+          <div class="player-club">Brighton</div>
+          <p>Japan's electric winger and their biggest threat. Close control and acceleration that can unpick even a Brazilian back line on the turn.</p>
         </article>
         <article class="player">
           <span class="player-num">03</span>
-          <h4>Alphonso Davies</h4>
-          <div class="player-club">Bayern Munich</div>
-          <p>Canada's captain and turbocharged talisman, fitness permitting. If his hamstring holds, his pace down the left could be the difference. If not, Canada lose their spark.</p>
+          <h4>Raphinha</h4>
+          <div class="player-club">Barcelona</div>
+          <p>In the form of his life and a relentless source of goals and assists. The other half of a Brazil attack that can overwhelm anyone on its day.</p>
         </article>
       </div>
 
       <div class="intel">
         <div class="intel-item">
           <span class="intel-icon">i</span>
-          <p>South Africa became the first host nation in World Cup history to exit in the group stage in 2010. Reaching this Round of 32 is already the most successful World Cup campaign Bafana Bafana have ever had.</p>
+          <p>At the 2022 World Cup, Japan beat both Germany and Spain in the group stage, the only nation ever to defeat two former world champions in a single group. They fear no reputation.</p>
         </div>
         <div class="intel-item">
           <span class="intel-icon">i</span>
-          <p>Canada lost all three group games at the 2022 World Cup without scoring an open-play goal of note. This tournament they topped that with a 6-0 win over Qatar alone, a measure of how far Jesse Marsch's side has come.</p>
+          <p>Brazil are the most successful nation in World Cup history with five titles, but have not won the tournament since 2002, their longest drought in the modern era. The pressure to end it is immense.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 2: GERMANY V PARAGUAY -->
+    <section class="match">
+      <p class="match-eyebrow">Round of 32 · 1:30 PM PT · Gillette Stadium, Foxborough</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">Redemption Watch</span>
+        <span class="tag tag-pl">⚽ Wirtz · Liverpool</span>
+        <span class="tag tag-pl">⚽ Musiala · Bayern</span>
+      </div>
+      <h2 class="match-title">Germany <span class="vs">v</span> Paraguay</h2>
+      <p class="match-dek">Germany arrive embarrassed by Ecuador and desperate to look serious again. Paraguay arrive ready to make the game as joyless and ugly as humanly possible. A clash of philosophies.</p>
+      <div class="match-crests">
+        <svg class="crest" viewBox="0 0 74 84" role="img" aria-label="Germany">
+  <defs><clipPath id="shGER"><path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z"/></clipPath></defs>
+  <g clip-path="url(#shGER)">
+    <rect x="0" y="0" width="74" height="84" fill="#000000"/>
+    <path d="M0 84 L74 0 V84 Z" fill="#DD0000"/>
+    <rect x="0" y="0" width="74" height="84" fill="rgba(0,0,0,0.06)"/>
+  </g>
+  <path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z" fill="none" stroke="#0A1622" stroke-width="2.5"/>
+  <text x="37" y="40" text-anchor="middle" class="crest-code" fill="#fff" stroke="#0A1622" stroke-width="0.6" paint-order="stroke" style="font-family:'Space Mono',monospace;font-weight:700;font-size:19px;">GER</text>
+</svg>
+        <div class="crest-mid"><span class="crest-vs">VS</span><span class="crest-kick">1:30 PM PT</span></div>
+      <div class="statchips"><span class="statchip"><span class="sc-top"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3-2 4-2 7a2 2 0 0 0 4 0c0-1 0-1 .5-2 1.5 1.5 2.5 3 2.5 5a5 5 0 0 1-10 0c0-3.5 3-5 5-10Z"/></svg><span class="sc-label">Germany openers</span></span><span class="sc-val">Hit <b>7</b> past Curaçao</span></span><span class="statchip"><span class="sc-top"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="sc-label">German exits</span></span><span class="sc-val">Groups <b>2018 &amp; 2022</b></span></span><span class="statchip"><span class="sc-top"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0Z"/></svg><span class="sc-label">Paraguay best</span></span><span class="sc-val"><b>QF</b> in 2010</span></span></div>
+        <svg class="crest" viewBox="0 0 74 84" role="img" aria-label="Paraguay">
+  <defs><clipPath id="shPAR"><path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z"/></clipPath></defs>
+  <g clip-path="url(#shPAR)">
+    <rect x="0" y="0" width="74" height="84" fill="#DA121A"/>
+    <path d="M0 84 L74 0 V84 Z" fill="#0038A8"/>
+    <rect x="0" y="0" width="74" height="84" fill="rgba(0,0,0,0.06)"/>
+  </g>
+  <path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z" fill="none" stroke="#0A1622" stroke-width="2.5"/>
+  <text x="37" y="40" text-anchor="middle" class="crest-code" fill="#fff" stroke="#0A1622" stroke-width="0.6" paint-order="stroke" style="font-family:'Space Mono',monospace;font-weight:700;font-size:19px;">PAR</text>
+</svg>
+      </div>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:58%"></div>
+        <div class="seg-d" style="width:25%"></div>
+        <div class="seg-b" style="width:17%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Germany 58%</span>
+        <span><span class="dot dot-d"></span>Draw 25%</span>
+        <span><span class="dot dot-b"></span>Paraguay 17%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus · draw resolves in extra time and penalties</span>
+
+      <div class="story">
+        <p>Germany come into the knockouts carrying a faint whiff of scandal, having lost 2-1 to Ecuador in their final group game, a result that mattered nothing to their qualification and everything to their dignity. They had already won the group on the back of a thunderous 7-1 demolition of Curaçao, and the talent is undeniable, Florian Wirtz and Jamal Musiala forming one of the most gifted creative axes in world football, with Kai Havertz leading the line. But Germany have made an art form of group-stage swagger followed by knockout heartbreak, and Julian Nagelsmann knows another flat performance here would reopen every old wound.</p>
+        <p>Paraguay, by delicious contrast, are here to ruin the party. They ground their way out of the group, most memorably by scoring against Türkiye inside 64 seconds and then defending grimly for the rest of the match, and then played out a cagey, goalless stalemate with Australia to clinch their spot. This is a team built on discipline, organization and the firm belief that the most beautiful thing in football is a clean sheet. They will sit deep, frustrate, foul when they must, and hope to drag Germany into the kind of low-scoring knife-fight where one set piece or one counter decides everything.</p>
+        <p>Germany are clear favorites and, on talent, should have far too much, especially since Nagelsmann has shown he prefers to attack his way out of trouble rather than grind. But knockout football and a stubborn South American low block are exactly the combination that has undone fancied European sides before, and if Germany are still goalless past the hour, the ghosts of 2018 and 2022 will start murmuring. Expect German pressure, expect Paraguayan resistance, and expect the tension to build with every minute the favorites fail to break through.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Real, in the specific way knockout football allows. Paraguay will not try to win a shootout; they will try to strangle the game and steal it late or on penalties. Germany's recent tournament history is not exactly a vault of calm. If the breakthrough does not come early, the nerves will.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Florian Wirtz</h4>
+          <div class="player-club">Liverpool</div>
+          <p>Germany's creative jewel. The vision and close control to unpick exactly the kind of packed, stubborn defense Paraguay will deploy.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Antonio Sanabria</h4>
+          <div class="player-club">Paraguay talisman</div>
+          <p>Paraguay's focal point and outlet on the counter. Their slim hopes of a goal, and a famous upset, run largely through him.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Jamal Musiala</h4>
+          <div class="player-club">Bayern Munich</div>
+          <p>Germany's mesmeric dribbler, able to wriggle through tight spaces. Against a deep block, his ability to create something from nothing is vital.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Germany suffered group-stage exits at both the 2018 and 2022 World Cups. Reaching the knockouts this time has eased the pressure, but a slip here would reignite every doubt about a fragile tournament temperament.</p>
         </div>
         <div class="intel-item">
           <span class="intel-icon">i</span>
-          <p>Whoever wins advances to face the winner of Netherlands v Morocco in the Round of 16 on July 4 in Houston. The loser becomes the first team eliminated from the knockout rounds of this World Cup.</p>
+          <p>Paraguay reached the World Cup quarter-finals as recently as 2010 on the back of exactly this kind of obdurate, defensive football. They are far more dangerous as a knockout opponent than their attacking numbers suggest.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCH 3: NETHERLANDS V MOROCCO -->
+    <section class="match">
+      <p class="match-eyebrow">Round of 32 · 6:00 PM PT · Estadio BBVA, Monterrey</p>
+      <div class="match-tags">
+        <span class="tag tag-kicker">Tie of the Round</span>
+        <span class="tag tag-pl">⚽ Van Dijk · Liverpool</span>
+        <span class="tag tag-pl">⚽ Hakimi · PSG</span>
+      </div>
+      <h2 class="match-title">Netherlands <span class="vs">v</span> Morocco</h2>
+      <p class="match-dek">The pick of the entire round: two genuine quarter-final contenders, a spiritual rematch of Morocco's history-making 2022 run, and a true coin-flip with a place in the last 16 on the line.</p>
+      <div class="match-crests">
+        <svg class="crest" viewBox="0 0 74 84" role="img" aria-label="Netherlands">
+  <defs><clipPath id="shNED"><path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z"/></clipPath></defs>
+  <g clip-path="url(#shNED)">
+    <rect x="0" y="0" width="74" height="84" fill="#FF6B00"/>
+    <path d="M0 84 L74 0 V84 Z" fill="#21468B"/>
+    <rect x="0" y="0" width="74" height="84" fill="rgba(0,0,0,0.06)"/>
+  </g>
+  <path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z" fill="none" stroke="#0A1622" stroke-width="2.5"/>
+  <text x="37" y="40" text-anchor="middle" class="crest-code" fill="#fff" stroke="#0A1622" stroke-width="0.6" paint-order="stroke" style="font-family:'Space Mono',monospace;font-weight:700;font-size:19px;">NED</text>
+</svg>
+        <div class="crest-mid"><span class="crest-vs">VS</span><span class="crest-kick">6:00 PM PT</span></div>
+      <div class="statchips"><span class="statchip"><span class="sc-top"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0Z"/></svg><span class="sc-label">Morocco 2022</span></span><span class="sc-val"><b>Semifinal</b> run</span></span><span class="statchip"><span class="sc-top"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="sc-label">Dutch finals</span></span><span class="sc-val"><b>3</b> lost, <b>0</b> won</span></span><span class="statchip"><span class="sc-top"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC857" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3-2 4-2 7a2 2 0 0 0 4 0c0-1 0-1 .5-2 1.5 1.5 2.5 3 2.5 5a5 5 0 0 1-10 0c0-3.5 3-5 5-10Z"/></svg><span class="sc-label">Verdict</span></span><span class="sc-val"><b>Tie</b> of the round</span></span></div>
+        <svg class="crest" viewBox="0 0 74 84" role="img" aria-label="Morocco">
+  <defs><clipPath id="shMAR"><path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z"/></clipPath></defs>
+  <g clip-path="url(#shMAR)">
+    <rect x="0" y="0" width="74" height="84" fill="#C1272D"/>
+    <path d="M0 84 L74 0 V84 Z" fill="#006233"/>
+    <rect x="0" y="0" width="74" height="84" fill="rgba(0,0,0,0.06)"/>
+  </g>
+  <path d="M5 6 H69 V46 C69 66 53 76 37 82 C21 76 5 66 5 46 Z" fill="none" stroke="#0A1622" stroke-width="2.5"/>
+  <text x="37" y="40" text-anchor="middle" class="crest-code" fill="#fff" stroke="#0A1622" stroke-width="0.6" paint-order="stroke" style="font-family:'Space Mono',monospace;font-weight:700;font-size:19px;">MAR</text>
+</svg>
+      </div>
+
+      <div class="prob-bar">
+        <div class="seg-a" style="width:42%"></div>
+        <div class="seg-d" style="width:28%"></div>
+        <div class="seg-b" style="width:30%"></div>
+      </div>
+      <div class="prob-labels">
+        <span><span class="dot dot-a"></span>Netherlands 42%</span>
+        <span><span class="dot dot-d"></span>Draw 28%</span>
+        <span><span class="dot dot-b"></span>Morocco 30%</span>
+      </div>
+      <span class="prob-source">Win probability · market-implied consensus · draw resolves in extra time and penalties</span>
+
+      <div class="story">
+        <p>Save your full attention for this one, because it is the jewel of the round. The Netherlands arrived as dark-horse contenders and have largely justified it, topping a tricky group that included Japan and crushing Sweden 5-1 along the way. Ronald Koeman has a side loaded with quality and balance, Virgil van Dijk marshalling the back, Cody Gakpo and Memphis Depay carrying the threat, and the kind of tournament know-how that wins tight knockout games. On their day, they can beat anyone left in the bracket, and they will fancy this.</p>
+        <p>But Morocco are no ordinary last-32 opponent, they are a side that fundamentally rewired what is possible for African football. In 2022 the Atlas Lions became the first African and Arab nation ever to reach a World Cup semifinal, and they did not sneak there: they knocked out Spain on penalties and beat Portugal outright, defending with a discipline and ferocity that left the world breathless. This is a deeper, more experienced version of that team, with Achraf Hakimi a genuine superstar at full-back and Brahim Díaz pulling strings. They will not fear the Dutch in the slightest, and they have the defensive steel and counterattacking venom to win any knockout game they play.</p>
+        <p>This is as close to a 50-50 as the round offers, two excellent sides who could both plausibly reach the semifinals, meeting absurdly early because of how the bracket fell. Expect a tactical chess match with moments of genuine quality, expect it to be tight, and expect the very real possibility of extra time and penalties, where Morocco's nerve has historically been ice-cold. If you watch one full ninety, or 120, minutes today, make it this. The winner announces themselves as a serious threat to go all the way.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Upset Watch</div>
+        <p>Barely an upset at all, given how level this is. Morocco are marginal underdogs only by reputation, not by quality; they have the better recent World Cup pedigree and a penalty-shootout temperament few can match. If this goes the distance, do not back against the Atlas Lions.</p>
+      </div>
+
+      <h3 class="sub-title">Players to Watch</h3>
+      <div class="players">
+        <article class="player">
+          <span class="player-num">01</span>
+          <h4>Achraf Hakimi</h4>
+          <div class="player-club">Paris Saint-Germain</div>
+          <p>Morocco's superstar full-back and one of the best on the planet in his role. A two-way weapon who can win the game at either end.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">02</span>
+          <h4>Cody Gakpo</h4>
+          <div class="player-club">Liverpool</div>
+          <p>The Netherlands' in-form wide threat. Direct, two-footed and exactly the kind of player to unlock a disciplined Moroccan defense.</p>
+        </article>
+        <article class="player">
+          <span class="player-num">03</span>
+          <h4>Brahim Díaz</h4>
+          <div class="player-club">Real Madrid</div>
+          <p>Morocco's silky creator, dancing between the lines. The man most likely to conjure the moment that decides a tight, tense night.</p>
+        </article>
+      </div>
+
+      <div class="intel">
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>Morocco's run to the 2022 semifinals, eliminating Spain and Portugal, was the deepest by any African nation in World Cup history. This is a more experienced squad still built around that golden generation.</p>
+        </div>
+        <div class="intel-item">
+          <span class="intel-icon">i</span>
+          <p>The Netherlands have reached three World Cup finals and lost all three, the most by any nation never to win it. This generation is among their most talented in years and carries the weight of that history.</p>
         </div>
       </div>
     </section>
 
     <!-- THE BRACKET AHEAD -->
     <section>
-      <h2 class="section-title">The Bracket Ahead · What the Knockouts Hold</h2>
-      <p class="section-note">Today is the appetizer. Here is a taste of the Round of 32 main course, rolling out over the next six days.</p>
+      <h2 class="section-title">The Bracket Ahead · The Knockouts Roll On</h2>
+      <p class="section-note">Today's three winners advance to the last 16. Here is what the rest of this loaded week holds.</p>
       <div class="table-wrap">
         <table>
-          <caption>Round of 32 · Selected Fixtures (Pacific Time)</caption>
+          <caption>Round of 32 · Upcoming (Pacific Time)</caption>
           <thead>
             <tr><th>Match</th><th>When</th><th>Where</th></tr>
           </thead>
           <tbody>
-            <tr class="qualify"><td>South Africa v Canada</td><td class="num">Today, 12 PM</td><td>Inglewood</td></tr>
-            <tr><td>Brazil v Japan</td><td class="num">Mon, 1 PM</td><td>Houston</td></tr>
-            <tr><td>Germany v Paraguay</td><td class="num">Mon, 4:30 PM</td><td>Foxborough</td></tr>
-            <tr><td>Netherlands v Morocco</td><td class="num">Mon, 8 PM</td><td>Monterrey</td></tr>
-            <tr><td>Ivory Coast v Norway</td><td class="num">Tue, 1 PM</td><td>Arlington</td></tr>
-            <tr><td>France v Sweden</td><td class="num">Tue, 10 PM</td><td>East Rutherford</td></tr>
-            <tr><td>USA v Bosnia</td><td class="num">Wed, 8 PM</td><td>Santa Clara</td></tr>
-            <tr><td>Spain v Algeria</td><td class="num">Thu, 12 PM</td><td>Inglewood</td></tr>
-            <tr><td>Portugal v Croatia</td><td class="num">Thu, 7 PM</td><td>Toronto</td></tr>
+            <tr class="qualify"><td>Brazil v Japan</td><td class="num">Today, 10 AM</td><td>Houston</td></tr>
+            <tr class="qualify"><td>Germany v Paraguay</td><td class="num">Today, 1:30 PM</td><td>Foxborough</td></tr>
+            <tr class="qualify"><td>Netherlands v Morocco</td><td class="num">Today, 6 PM</td><td>Monterrey</td></tr>
+            <tr><td>Ivory Coast v Norway</td><td class="num">Tue, 10 AM</td><td>Arlington</td></tr>
+            <tr><td>France v Sweden</td><td class="num">Tue, 2 PM</td><td>East Rutherford</td></tr>
+            <tr><td>Mexico v Ecuador</td><td class="num">Tue, 6 PM</td><td>Mexico City</td></tr>
+            <tr><td>England v DR Congo</td><td class="num">Wed, 9 AM</td><td>Atlanta</td></tr>
+            <tr><td>Belgium v Senegal</td><td class="num">Wed, 1 PM</td><td>Seattle</td></tr>
+            <tr><td>USA v Bosnia</td><td class="num">Wed, 5 PM</td><td>Santa Clara</td></tr>
+            <tr><td>Spain v Austria</td><td class="num">Thu, 12 PM</td><td>Inglewood (SoFi)</td></tr>
             <tr><td>Argentina v Cabo Verde</td><td class="num">Fri, 6 PM</td><td>Miami</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="table-note">A loaded week: Brazil meet a Japan side many fancy as dark horses, Germany must steady themselves after that Ecuador embarrassment, and the USMNT open their knockout campaign against Bosnia at Levi's Stadium on Wednesday. Two more SoFi fixtures are coming your way too, including Spain v Algeria on Thursday, the grudge-match survivors against the European champions. Tomorrow's brief returns to a fuller slate. For today, there is only Inglewood.</p>
+      <p class="table-note">A monster week ahead: Haaland's Norway meet Ivory Coast, France get a tricky Sweden, and Mexico face Ecuador in a fiery Azteca all-Americas clash on Tuesday. Wednesday brings the USMNT's knockout opener against Bosnia at Levi's Stadium, plus Belgium v Senegal. And Thursday, the European champions Spain come to SoFi on your doorstep to face Austria. Tomorrow's brief breaks down Tuesday's trio. Today, it is all about Brazil, Germany and the Dutch.</p>
     </section>
 
     <footer>
-      <p>World Cup Daily · Sunday 28 June 2026 · Los Angeles</p>
-      <p>All kickoff times Pacific. Win probabilities are market-implied consensus and move. Knockout draws are resolved by extra time and penalties. Facts checked against FIFA, ESPN, CBS Sports, Yahoo Sports, Sky Sports, NBC and others. The knockouts are here. Enjoy the football. ⚽</p>
+      <p>World Cup Daily · Monday 29 June 2026 · Los Angeles</p>
+      <p>All kickoff times Pacific. Win probabilities are market-implied consensus and move. Knockout draws are resolved by extra time and penalties. Facts checked against FIFA, ESPN, CBS Sports, Yahoo Sports, Sky Sports and others. The knockouts are here. Enjoy the football. ⚽</p>
     </footer>
   </div>
 
